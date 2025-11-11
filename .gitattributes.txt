@@ -1,0 +1,10 @@
+# Unity text files
+*.cs text diff=cs
+*.shader text
+*.txt text
+*.asmdef text
+*.json text
+*.meta text
+
+# Force LF for all other text files
+* text=auto eol=lf
