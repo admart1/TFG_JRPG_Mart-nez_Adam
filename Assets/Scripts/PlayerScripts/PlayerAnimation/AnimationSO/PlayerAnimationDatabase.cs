@@ -7,7 +7,9 @@ public class PlayerAnimationDatabase : ScriptableObject
     {
         Idle,
         Movement,
-        Attack
+        Attack,
+        Attack2,
+        Attack3
     }
 
     [System.Serializable]

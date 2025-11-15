@@ -17,6 +17,11 @@ public class PlayerIdleState : PlayerState
         {
             stateMachine.ChangeState(player.MovementState);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(player.AttackState);
+        }
     }
 
 public override void LogicUpdate()

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     // Estados
     [HideInInspector] public PlayerIdleState IdleState;
     [HideInInspector] public PlayerMovementState MovementState;
+    [HideInInspector] public PlayerAttackState AttackState;
+
 
     public PlayerStateMachine stateMachine;
 
@@ -28,10 +30,12 @@ public class PlayerController : MonoBehaviour
 
         IdleState = new PlayerIdleState();
         MovementState = new PlayerMovementState();
+        AttackState = new PlayerAttackState();
 
         // inicializar estados
         IdleState.Initialize(this, stateMachine);
         MovementState.Initialize(this, stateMachine);
+        AttackState.Initialize(this, stateMachine);
     }
 
     void Start()
@@ -48,5 +52,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         stateMachine.CurrentState.PhysicsUpdate();
+    }
+
+    public void AnimationEvent(string eventName)
+    {
+        stateMachine.CurrentState.OnAnimationEvent(eventName);
     }
 }

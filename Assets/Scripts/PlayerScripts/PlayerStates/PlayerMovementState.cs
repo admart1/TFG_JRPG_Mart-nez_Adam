@@ -11,7 +11,11 @@ public class PlayerMovementState : PlayerState
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (input == Vector2.zero)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(player.AttackState);
+        }
+        else if (input == Vector2.zero)
         {
             stateMachine.ChangeState(player.IdleState);
         }

@@ -61,3 +61,75 @@ MonoBehaviour:
   - state: 1
     direction: 7
     animationName: MovementNorthWest
+  - state: 2
+    direction: 0
+    animationName: AttackNorth
+  - state: 2
+    direction: 1
+    animationName: AttackNorthEast
+  - state: 2
+    direction: 2
+    animationName: AttackEast
+  - state: 2
+    direction: 3
+    animationName: AttackSouthEast
+  - state: 2
+    direction: 4
+    animationName: AttackSouth
+  - state: 2
+    direction: 5
+    animationName: AttackSouthWest
+  - state: 2
+    direction: 6
+    animationName: AttackWest
+  - state: 2
+    direction: 7
+    animationName: AttackNorthWest
+  - state: 3
+    direction: 0
+    animationName: Attack2North
+  - state: 3
+    direction: 1
+    animationName: Attack2NorthEast
+  - state: 3
+    direction: 2
+    animationName: Attack2East
+  - state: 3
+    direction: 3
+    animationName: Attack2SouthEast
+  - state: 3
+    direction: 4
+    animationName: Attack2South
+  - state: 3
+    direction: 5
+    animationName: Attack2SouthWest
+  - state: 3
+    direction: 6
+    animationName: Attack2West
+  - state: 3
+    direction: 7
+    animationName: Attack2NorthWest
+  - state: 4
+    direction: 0
+    animationName: Attack3North
+  - state: 4
+    direction: 1
+    animationName: Attack3NorthEast
+  - state: 4
+    direction: 2
+    animationName: Attack3East
+  - state: 4
+    direction: 3
+    animationName: Attack3SouthEast
+  - state: 4
+    direction: 4
+    animationName: Attack3South
+  - state: 4
+    direction: 5
+    animationName: Attack3SouthWest
+  - state: 4
+    direction: 6
+    animationName: Attack3West
+  - state: 4
+    direction: 7
+    animationName: Attack3NorthWest
