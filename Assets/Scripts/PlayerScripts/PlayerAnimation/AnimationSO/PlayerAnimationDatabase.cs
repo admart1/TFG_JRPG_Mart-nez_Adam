@@ -35,14 +35,13 @@ public class PlayerAnimationDatabase : ScriptableObject
         return null;
     }
 
-    // crea el nombre automaticamente a partir de state+direccion
     private void OnValidate()
     {
         if (animations == null) return;
 
         foreach (var entry in animations)
         {
-            // nombre generado con state + direction
+            // crea el nombre auto state+direccion
             entry.animationName = entry.state.ToString() + entry.direction.ToString();
         }
     }
