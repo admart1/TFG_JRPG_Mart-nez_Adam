@@ -1,0 +1,15 @@
+using UnityEngine;
+
+[CreateAssetMenu(menuName = "Sword/New Sword", fileName = "NewSword")]
+public class EquipableSword : ScriptableObject
+{
+    [Header("Identidad")]
+    public string itemId;
+    public string displayName;
+
+    [Header("Arte")]
+    public Sprite icon;
+
+    [Header("Stats")]
+    public StatsModifier statsModifier;
+}
