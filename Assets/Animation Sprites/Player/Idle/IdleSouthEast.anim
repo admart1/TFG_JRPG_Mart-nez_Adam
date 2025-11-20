@@ -21,25 +21,25 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 8949537159861715965, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: 5733742031499081357, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.100000024
-      value: {fileID: -3433383020725119536, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: -2536636674425792506, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.20000005
-      value: {fileID: 1379963969572371263, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: -5994587615576319595, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.29999995
-      value: {fileID: -5669836236283332725, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: 7703531245135900960, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.4000001
-      value: {fileID: 8533446572967160369, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: -1107434986882662282, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.5
-      value: {fileID: 5493522745328513154, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: -9143157235289075956, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.60000014
-      value: {fileID: -426526672165150638, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: 3689179252870797851, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.70000005
-      value: {fileID: 2658560103338309400, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: -1581024016896081118, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.79999995
-      value: {fileID: -2284912364050153339, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: 2126185634368410714, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     - time: 0.89
-      value: {fileID: -2284912364050153339, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
+      value: {fileID: 2126185634368410714, guid: 59343e1ca62aa204da86505dede3d6ce, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212

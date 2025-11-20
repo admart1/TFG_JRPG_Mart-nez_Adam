@@ -23,7 +23,7 @@ public class CharacterModel
     [Header("Progresión por nivel")]
     public LevelProgression levelProgression;
 
-    // Devuelve los FinalStats del personaje, aplicando base, progresión por nivel y la espada activa.
+    // devuelve los FinalStats del personaje, aplicando base, progresión por nivel y la espada activa.
     public FinalStats GetFinalStats()
     {
         // 1. Stats base
@@ -46,13 +46,13 @@ public class CharacterModel
         return stats;
     }
 
-    /// Devuelve la espada activa
+    /// devuelve la espada activa
     public EquipableSword GetActiveSword()
     {
         return activeSword == ActiveSword.Slot1 ? SwordSlot1 : SwordSlot2;
     }
 
-    /// Cambia la espada activa entre Slot1 y Slot2.
+    /// cambia la espada activa entre Slot1 y Slot2.
     public void SwitchActiveSword()
     {
         activeSword = activeSword == ActiveSword.Slot1 ? ActiveSword.Slot2 : ActiveSword.Slot1;
