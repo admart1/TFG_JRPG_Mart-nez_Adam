@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovementState : PlayerState
 {
+    private Vector2 rawInput;
     public override void Enter()
     {
         Debug.Log("movement activo");
@@ -11,7 +12,8 @@ public class PlayerMovementState : PlayerState
     {
         if (player.input == null) return;
 
-        player.MoveDirection = player.input.Move.normalized;
+        rawInput = player.input.Move.normalized;
+        player.MoveDirection = rawInput.normalized;
 
         if (player.input.AttackPressed)
         {
@@ -35,7 +37,7 @@ public class PlayerMovementState : PlayerState
     public override void LogicUpdate()
     {
         //actualizar dirección
-        player.playerFacing.UpdateFacingDirection(player.MoveDirection);
+        player.playerFacing.UpdateFacingDirection(rawInput);
 
         //reproducir animacion
         player.animationController.PlayAnimation(
