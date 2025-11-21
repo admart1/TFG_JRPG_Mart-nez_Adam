@@ -28,7 +28,7 @@ public class PlayerAttackState : PlayerState
 
     public override void HandleInput()
     {
-        if (canChain && Input.GetKeyDown(KeyCode.Space))
+        if (canChain && player.input.AttackPressed)
         {
             bufferedAttack = true;
         }

@@ -9,20 +9,22 @@ public class PlayerMovementState : PlayerState
 
     public override void HandleInput()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (player.input == null) return;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        player.MoveDirection = player.input.Move.normalized;
+
+        if (player.input.AttackPressed)
         {
             stateMachine.ChangeState(player.AttackState);
+            return;
         }
-        else if (input == Vector2.zero)
+        
+        if (player.input.Move == Vector2.zero)
         {
             stateMachine.ChangeState(player.IdleState);
+            return;
         }
-        else
-        {
-            player.MoveDirection = input.normalized;
-        }
+
     }
 
     public override void PhysicsUpdate()

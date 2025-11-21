@@ -720,6 +720,7 @@ GameObject:
   - component: {fileID: 1572321292}
   - component: {fileID: 1572321295}
   - component: {fileID: 1572321296}
+  - component: {fileID: 1572321297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -815,6 +816,7 @@ MonoBehaviour:
   Rigidbody: {fileID: 1572321294}
   playerFacing: {fileID: 0}
   animationController: {fileID: 0}
+  input: {fileID: 0}
   MovementSpeed: 3
   MoveDirection: {x: 0, y: 0}
 --- !u!95 &1572321293
@@ -894,6 +896,18 @@ MonoBehaviour:
   animationDatabase: {fileID: 11400000, guid: e8fc049d0ebd65b40bd6ad109aa548fd, type: 2}
   animator: {fileID: 0}
   playerFacing: {fileID: 0}
+--- !u!114 &1572321297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572321289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de53e6649cd16840add29a3afaacd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputReader
 --- !u!1 &1989951227
 GameObject:
   m_ObjectHideFlags: 0

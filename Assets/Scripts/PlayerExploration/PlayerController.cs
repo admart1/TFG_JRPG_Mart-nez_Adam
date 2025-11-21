@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D Rigidbody;
     [HideInInspector] public PlayerFacing playerFacing;
     [HideInInspector] public PlayerAnimationController animationController;
+    [HideInInspector] public InputReader input;
 
     [Header("Movimiento")]
     public float MovementSpeed = 5f;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         // referencias
         playerFacing = GetComponent<PlayerFacing>();
         animationController = GetComponent<PlayerAnimationController>();
+        input = GetComponent<InputReader>();
 
         // crear estados
         stateMachine = new PlayerStateMachine();

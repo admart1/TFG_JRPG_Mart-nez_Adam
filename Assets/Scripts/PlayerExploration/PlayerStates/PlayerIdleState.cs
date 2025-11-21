@@ -11,14 +11,13 @@ public class PlayerIdleState : PlayerState
 
     public override void HandleInput()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        if (input != Vector2.zero)
+        if (player.input.Move != Vector2.zero)
         {
             stateMachine.ChangeState(player.MovementState);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (player.input.AttackPressed)
         {
             stateMachine.ChangeState(player.AttackState);
         }
