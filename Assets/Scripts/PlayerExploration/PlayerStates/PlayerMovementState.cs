@@ -12,7 +12,7 @@ public class PlayerMovementState : PlayerState
     {
         if (player.input == null) return;
 
-        rawInput = player.input.Move.normalized;
+        rawInput = player.input.Move.normalized; // raw para el facingdirection y normalizado para el movimiento
         player.MoveDirection = rawInput.normalized;
 
         if (player.input.AttackPressed)
