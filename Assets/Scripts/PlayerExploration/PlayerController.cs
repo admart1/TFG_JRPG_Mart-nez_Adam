@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public PlayerAnimationController animationController;
     [HideInInspector] public InputReader input;
 
+    [Header("Persoanjes")]
+    public PartyManager partyManager;
+    public CharacterModel character;
+    
     [Header("Movimiento")]
     public float MovementSpeed = 5f;
     [HideInInspector] public Vector2 MoveDirection; //para el movimiento, normalizado en movementstate
@@ -43,6 +47,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         stateMachine.Initialize(IdleState);
+        character = partyManager.activeCharacter;
     }
 
     void Update()

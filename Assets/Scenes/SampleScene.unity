@@ -405,6 +405,59 @@ MonoBehaviour:
   smoothTime: 0
   lookAheadDistance: 0.15
   lookAheadSmoothTime: 0.3
+--- !u!1 &531957489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531957491}
+  - component: {fileID: 531957490}
+  m_Layer: 0
+  m_Name: PartyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &531957490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531957489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323e5c53f4a09e546a4818333ccce4b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PartyManager
+  characterDatabase: {fileID: 11400000, guid: df590d39cd552be43b5f117446d2c524, type: 2}
+  activeCharacter:
+    definition: {fileID: 0}
+    level: 1
+    currentHP: 0
+    currentMana: 0
+    SwordSlot1: {fileID: 0}
+    SwordSlot2: {fileID: 0}
+    activeSword: 0
+--- !u!4 &531957491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531957489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01086, y: -0.31039, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,7 +662,6 @@ MonoBehaviour:
   toggleKey: 282
   showDebug: 1
   position: {x: 10, y: 10}
-  playerFacing: {fileID: 1572321295}
   player: {fileID: 1572321292}
 --- !u!4 &1282698245
 Transform:
@@ -621,6 +673,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.41434, y: 0.48304, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1503136410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503136411}
+  m_Layer: 0
+  m_Name: /////////////  GLOBAL SYSTEMS  /////////////
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503136411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503136410}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.03908, y: 0.32527, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -817,6 +900,15 @@ MonoBehaviour:
   playerFacing: {fileID: 0}
   animationController: {fileID: 0}
   input: {fileID: 0}
+  partyManager: {fileID: 531957490}
+  character:
+    definition: {fileID: 0}
+    level: 1
+    currentHP: 0
+    currentMana: 0
+    SwordSlot1: {fileID: 0}
+    SwordSlot2: {fileID: 0}
+    activeSword: 0
   MovementSpeed: 3
   MoveDirection: {x: 0, y: 0}
 --- !u!95 &1572321293
@@ -1161,6 +1253,8 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1572321291}
   - {fileID: 708448442}
+  - {fileID: 1503136411}
+  - {fileID: 531957491}
   - {fileID: 1243507979}
   - {fileID: 1282698245}
   - {fileID: 339722397}

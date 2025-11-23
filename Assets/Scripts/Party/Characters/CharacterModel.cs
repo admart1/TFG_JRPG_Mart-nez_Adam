@@ -9,30 +9,60 @@ public enum ActiveSword
 [System.Serializable]
 public class CharacterModel
 {
-    // DATOS
-    [Header("Identidad")]
-    public string characterName;
-    public BaseStats baseStats;
-    public int level = 1;
+    // ================================
+    // DATOS ESTÁTICOS
+    [Header("Personaje (character definition")]
+    public CharacterDefinition definition;
+
+    // ================================
+    // DATOS DINÁMICOS
+    [Header("Estado actual")]
+    public int level = 1;                // Nivel actual
+    public int currentHP;
+    public int currentMana;
 
     [Header("Espadas")]
     public EquipableSword SwordSlot1;
     public EquipableSword SwordSlot2;
     public ActiveSword activeSword = ActiveSword.Slot1;
 
-    [Header("Progresión por nivel")]
-    public LevelProgression levelProgression;
+
+    #region CONSTRUCTORES
+    public void InitializeCharacter(CharacterDefinition def)
+    {
+        definition = def;
+
+        // estadp
+        level = def.startingLevel;
+        currentHP = def.startingHP;
+        currentMana = def.startingMana;
+
+        // espadas
+        SwordSlot1 = def.startingSword1;
+        SwordSlot2 = def.startingSword2;
+        activeSword = def.activeSword;
+    }
+    #endregion
+
+
+    #region MÉTODOS ESTADÍSTICAS
 
     // devuelve los FinalStats del personaje, aplicando base, progresión por nivel y la espada activa.
     public FinalStats GetFinalStats()
     {
-        // 1. Stats base
-        FinalStats stats = baseStats.ToStats();
-
-        // 2. Progresión por nivel
-        if (levelProgression != null)
+        if (definition == null)
         {
-            StatsModifier levelModifier = levelProgression.GetModifierForLevel(level);
+            Debug.LogWarning("CharacterModel no tiene def");
+            return new FinalStats();
+        }
+
+        // 1. stats base
+        FinalStats stats = definition.baseStats.ToStats();
+
+        // 2. progresión nivel
+        if (definition.levelProgression != null)
+        {
+            StatsModifier levelModifier = definition.levelProgression.GetModifierForLevel(level);
             stats.ApplyModifier(levelModifier);
         }
 
@@ -45,14 +75,15 @@ public class CharacterModel
 
         return stats;
     }
+    #endregion
 
-    /// devuelve la espada activa
+
+    #region MÉTODOS ESPADAS
     public EquipableSword GetActiveSword()
     {
         return activeSword == ActiveSword.Slot1 ? SwordSlot1 : SwordSlot2;
     }
 
-    /// cambia la espada activa entre Slot1 y Slot2.
     public void SwitchActiveSword()
     {
         activeSword = activeSword == ActiveSword.Slot1 ? ActiveSword.Slot2 : ActiveSword.Slot1;
@@ -64,15 +95,16 @@ public class CharacterModel
         else if (slot == 2) SwordSlot2 = sword;
     }
 
-    public void EquipSwordActive(EquipableSword sword)
+    public void SetActiveSword(int slot)
     {
-        if (SwordSlot1 == sword) activeSword = ActiveSword.Slot1;
-        else if (SwordSlot2 == sword) activeSword = ActiveSword.Slot2;
-        else
+        if (slot == 1 && activeSword != ActiveSword.Slot1)
         {
-            // si la espada no estaba en los slots, la ponemos en Slot1 y la activamos
-            SwordSlot1 = sword;
             activeSword = ActiveSword.Slot1;
         }
+        else if (slot == 2 && activeSword != ActiveSword.Slot2)
+        {
+            activeSword = ActiveSword.Slot2;
+        }
     }
+    #endregion
 }

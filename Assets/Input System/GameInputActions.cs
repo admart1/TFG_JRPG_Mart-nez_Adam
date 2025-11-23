@@ -118,6 +118,15 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ChangeCharacter"",
+                    ""type"": ""Button"",
+                    ""id"": ""e429bc50-5533-4bbb-9ee5-edb5422f097b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -230,6 +239,28 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd03e914-50ef-4f6b-96e8-a89964534106"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeCharacter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a9525fe-97d0-449e-b267-60bfa4186f3a"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeCharacter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -309,6 +340,7 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
         m_PlayerExploration_Move = m_PlayerExploration.FindAction("Move", throwIfNotFound: true);
         m_PlayerExploration_Attack = m_PlayerExploration.FindAction("Attack", throwIfNotFound: true);
         m_PlayerExploration_Menu = m_PlayerExploration.FindAction("Menu", throwIfNotFound: true);
+        m_PlayerExploration_ChangeCharacter = m_PlayerExploration.FindAction("ChangeCharacter", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -398,6 +430,7 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerExploration_Move;
     private readonly InputAction m_PlayerExploration_Attack;
     private readonly InputAction m_PlayerExploration_Menu;
+    private readonly InputAction m_PlayerExploration_ChangeCharacter;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerExploration".
     /// </summary>
@@ -421,6 +454,10 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerExploration/Menu".
         /// </summary>
         public InputAction @Menu => m_Wrapper.m_PlayerExploration_Menu;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerExploration/ChangeCharacter".
+        /// </summary>
+        public InputAction @ChangeCharacter => m_Wrapper.m_PlayerExploration_ChangeCharacter;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -456,6 +493,9 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
+            @ChangeCharacter.started += instance.OnChangeCharacter;
+            @ChangeCharacter.performed += instance.OnChangeCharacter;
+            @ChangeCharacter.canceled += instance.OnChangeCharacter;
         }
 
         /// <summary>
@@ -476,6 +516,9 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
+            @ChangeCharacter.started -= instance.OnChangeCharacter;
+            @ChangeCharacter.performed -= instance.OnChangeCharacter;
+            @ChangeCharacter.canceled -= instance.OnChangeCharacter;
         }
 
         /// <summary>
@@ -655,6 +698,13 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMenu(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ChangeCharacter" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnChangeCharacter(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

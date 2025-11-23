@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7e38b8e2bd33e48839f00d52b8b80e, type: 3}
+  m_Name: TestChar2
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDefinition
+  characterId: Personaje 2
+  displayName: Personaje 2
+  baseStats: {fileID: 11400000, guid: a5abc66c7a7a55246b1d63d14a97f5f0, type: 2}
+  levelProgression: {fileID: 11400000, guid: 1ba79a1daeaecd94c93442f07c4825d1, type: 2}
+  portrait: {fileID: 0}
+  overworldAnimator: {fileID: 0}
+  startingLevel: 1
+  startingHP: 10
+  startingMana: 10
+  startingSword1: {fileID: 0}
+  startingSword2: {fileID: 11400000, guid: 9ebb89afce4273e4b95987aa670b3438, type: 2}
+  activeSword: 0

@@ -8,6 +8,8 @@ public class InputReader : MonoBehaviour
     public Vector2 Move { get; private set; }
     public bool AttackPressed { get; private set; }
     public bool MenuPressed { get; private set; }
+    public bool ChangeCharacterPressed { get; private set; }
+
 
     private void Awake()
     {
@@ -21,6 +23,8 @@ public class InputReader : MonoBehaviour
         Move = inputActions.PlayerExploration.Move.ReadValue<Vector2>();
         AttackPressed = inputActions.PlayerExploration.Attack.WasPressedThisFrame();
         MenuPressed = inputActions.PlayerExploration.Menu.WasPressedThisFrame();
+        ChangeCharacterPressed = inputActions.PlayerExploration.ChangeCharacter.WasPressedThisFrame();
+
     }
 
     private void OnDestroy()
