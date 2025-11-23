@@ -34,7 +34,7 @@ public override void LogicUpdate()
         base.LogicUpdate();
 
         player.animationController.PlayAnimation(
-            PlayerAnimationDatabase.PlayerState.Idle,
+            "Idle",
             player.playerFacing.facingDirection
         );
     }

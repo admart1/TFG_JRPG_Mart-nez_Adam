@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ae147caa7d90544b0284b4329f2954, type: 3}
   m_Name: TestSwordRed
   m_EditorClassIdentifier: Assembly-CSharp::EquipableSword
-  itemId: Espada roja
+  swordId: sw_red
   displayName: Espada roja
   icon: {fileID: 0}
   statsModifier:

@@ -65,9 +65,9 @@ public class PlayerAttackState : PlayerState
             }
         }
     }
-
+    
     private void PlayCurrentComboAnimation()
-    {
+    {/*
         switch (comboNumber)
         {
             case 0:
@@ -88,6 +88,6 @@ public class PlayerAttackState : PlayerState
                     player.playerFacing.facingDirection
                 );
                 break;
-        }
+        }*/
     }
 }

@@ -41,7 +41,7 @@ public class PlayerMovementState : PlayerState
 
         //reproducir animacion
         player.animationController.PlayAnimation(
-            PlayerAnimationDatabase.PlayerState.Movement,
+            "Movement",
             player.playerFacing.facingDirection
         );
     }

@@ -13,33 +13,34 @@ public class DebugOverlay : MonoBehaviour
     private string activeCharacterName;
     private string sword1Name;
     private string sword2Name;
+    private string currentAnimation;
 
     void Update()
     {
         if (Input.GetKeyDown(toggleKey))
             showDebug = !showDebug;
 
-        // Dirección del jugador
+        // dirección
         if (player != null && player.playerFacing != null)
             facingDirection = player.playerFacing.facingDirection.ToString();
         else
             facingDirection = "No hay dirección";
 
-        // Estado actual de la state machine
+        // estado actual
         if (player != null && player.stateMachine != null && player.stateMachine.CurrentState != null)
             currentStateName = player.stateMachine.CurrentState.GetType().Name;
         else
             currentStateName = "No hay state activo";
 
-        // Personaje activo
+        // personaje activo
         if (player != null && player.partyManager != null && player.partyManager.activeCharacter != null)
         {
             var activeChar = player.partyManager.activeCharacter;
 
-            // Nombre del personaje
-            activeCharacterName = activeChar.definition != null ? activeChar.definition.characterId : "Sin definición";
+            // personaje
+            activeCharacterName = activeChar.definition != null ? activeChar.definition.displayName : "Sin definición";
 
-            // Espadas equipadas
+            // espadas
             sword1Name = activeChar.SwordSlot1 != null ? activeChar.SwordSlot1.displayName : "Vacía";
             sword2Name = activeChar.SwordSlot2 != null ? activeChar.SwordSlot2.displayName : "Vacía";
         }
@@ -48,6 +49,12 @@ public class DebugOverlay : MonoBehaviour
             activeCharacterName = "No hay character activo";
             sword1Name = "-";
             sword2Name = "-";
+        }
+
+        // animación
+        if (player != null && player.animationController != null)
+        {
+            currentAnimation = player.animationController.GetCurrentAnimationName();
         }
     }
 
@@ -68,5 +75,7 @@ public class DebugOverlay : MonoBehaviour
         GUI.Label(new Rect(x, y, 400, lineHeight), $"Espada Slot1: {sword1Name}");
         y += lineHeight;
         GUI.Label(new Rect(x, y, 400, lineHeight), $"Espada Slot2: {sword2Name}");
+        y += lineHeight;
+        GUI.Label(new Rect(x, y, 400, lineHeight), $"Animación: {currentAnimation}");
     }
 }

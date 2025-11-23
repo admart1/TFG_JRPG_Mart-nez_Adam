@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7e38b8e2bd33e48839f00d52b8b80e, type: 3}
   m_Name: TestChar2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDefinition
-  characterId: Personaje 2
+  characterId: char_character2
   displayName: Personaje 2
   baseStats: {fileID: 11400000, guid: a5abc66c7a7a55246b1d63d14a97f5f0, type: 2}
   levelProgression: {fileID: 11400000, guid: 1ba79a1daeaecd94c93442f07c4825d1, type: 2}
@@ -21,6 +21,6 @@ MonoBehaviour:
   startingLevel: 1
   startingHP: 10
   startingMana: 10
-  startingSword1: {fileID: 0}
+  startingSword1: {fileID: 11400000, guid: 1905ba36689916048b3ac68d55c5580e, type: 2}
   startingSword2: {fileID: 11400000, guid: 9ebb89afce4273e4b95987aa670b3438, type: 2}
   activeSword: 0

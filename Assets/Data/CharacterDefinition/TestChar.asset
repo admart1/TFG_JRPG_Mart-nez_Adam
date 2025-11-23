@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e7e38b8e2bd33e48839f00d52b8b80e, type: 3}
   m_Name: TestChar
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDefinition
-  characterId: Personaje 1
+  characterId: char_character1
   displayName: Personaje 1
   baseStats: {fileID: 11400000, guid: a5abc66c7a7a55246b1d63d14a97f5f0, type: 2}
   levelProgression: {fileID: 11400000, guid: 1ba79a1daeaecd94c93442f07c4825d1, type: 2}

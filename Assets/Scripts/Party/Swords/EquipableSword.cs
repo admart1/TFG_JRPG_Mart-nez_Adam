@@ -4,7 +4,7 @@ using UnityEngine;
 public class EquipableSword : ScriptableObject
 {
     [Header("Identidad")]
-    public string itemId;
+    public string swordId;
     public string displayName;
 
     [Header("Arte")]
