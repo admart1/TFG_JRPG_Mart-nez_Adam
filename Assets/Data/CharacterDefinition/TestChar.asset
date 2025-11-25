@@ -22,5 +22,5 @@ MonoBehaviour:
   startingHP: 10
   startingMana: 10
   startingSword1: {fileID: 11400000, guid: bbc19f840f9fc0241af1ed17acbcf60a, type: 2}
-  startingSword2: {fileID: 11400000, guid: 9ebb89afce4273e4b95987aa670b3438, type: 2}
+  startingSword2: {fileID: 11400000, guid: 1905ba36689916048b3ac68d55c5580e, type: 2}
   activeSword: 0

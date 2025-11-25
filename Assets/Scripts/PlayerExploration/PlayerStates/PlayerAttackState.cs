@@ -46,7 +46,7 @@ public class PlayerAttackState : PlayerState
 
     public override void OnAnimationEvent(string eventName)
     {
-        if (eventName == "AllowChainAttack")
+        if (eventName == "AllowChainAttack")                                // eventos ahora en AnimationEventRelay y no en el playercontroller****
         {
             canChain = true;
         }
@@ -67,27 +67,27 @@ public class PlayerAttackState : PlayerState
     }
     
     private void PlayCurrentComboAnimation()
-    {/*
+    {
         switch (comboNumber)
         {
             case 0:
                 player.animationController.PlayAnimation(
-                    PlayerAnimationDatabase.PlayerState.Attack,
+                    "Attack1",
                     player.playerFacing.facingDirection
                 );
                 break;
             case 1:
                 player.animationController.PlayAnimation(
-                    PlayerAnimationDatabase.PlayerState.Attack2,
+                    "Attack2",
                     player.playerFacing.facingDirection
                 );
                 break;
             case 2:
                 player.animationController.PlayAnimation(
-                    PlayerAnimationDatabase.PlayerState.Attack3,
+                    "Attack3",
                     player.playerFacing.facingDirection
                 );
                 break;
-        }*/
+        }
     }
 }

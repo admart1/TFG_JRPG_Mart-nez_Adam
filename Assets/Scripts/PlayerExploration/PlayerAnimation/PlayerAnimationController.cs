@@ -102,8 +102,8 @@ public class PlayerAnimationController : MonoBehaviour
         switch (direction)
         {
             case PlayerFacing.FacingDirection.North:
-                bodyRenderer.sortingOrder = 1;
-                armRenderer.sortingOrder = 2;
+                bodyRenderer.sortingOrder = 2;
+                armRenderer.sortingOrder = 1;
                 sword1Renderer.sortingOrder = 3;
                 sword2Renderer.sortingOrder = 4;
                 break;

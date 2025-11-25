@@ -60,9 +60,4 @@ public class PlayerController : MonoBehaviour
     {
         stateMachine.CurrentState.PhysicsUpdate();
     }
-
-    public void AnimationEvent(string eventName)
-    {
-        stateMachine.CurrentState.OnAnimationEvent(eventName);
-    }
 }
