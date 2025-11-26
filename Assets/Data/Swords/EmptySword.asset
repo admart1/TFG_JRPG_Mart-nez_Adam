@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ae147caa7d90544b0284b4329f2954, type: 3}
   m_Name: EmptySword
   m_EditorClassIdentifier: Assembly-CSharp::EquipableSword
-  swordId: none
+  swordId: sw_none
   displayName: Ninguna
   icon: {fileID: 0}
   statsModifier:
