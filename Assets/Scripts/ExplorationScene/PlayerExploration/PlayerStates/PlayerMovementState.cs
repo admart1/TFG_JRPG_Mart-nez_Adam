@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerMovementState : PlayerState
 {
@@ -38,12 +39,14 @@ public class PlayerMovementState : PlayerState
 
     public override void PhysicsUpdate()
     {
-        player.Rigidbody.linearVelocity = player.MoveDirection * player.MovementSpeed;
+
     }
+
+
 
     public override void LogicUpdate()
     {
-        //actualizar dirección
+        //actualizar direcciï¿½n
         player.playerFacing.UpdateFacingDirection(rawInput);
 
         //reproducir animacion

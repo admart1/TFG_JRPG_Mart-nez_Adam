@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movimiento")]
     public float MovementSpeed = 3;
     public float BaseSpeed = 3;
-    [HideInInspector] public Vector2 MoveDirection; 
+    [HideInInspector] public Vector2 MoveDirection;
 
     // Estados
     [HideInInspector] public PlayerIdleState IdleState;
@@ -24,13 +26,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public PlayerAttackState AttackState;
     [HideInInspector] public PlayerDashState DashState;
 
-    // Adicionales
+    [Header("Nivel del dash")]
     [SerializeField] public DashLevel currentDashLevel = DashLevel.Level1;
 
     public PlayerStateMachine stateMachine;
 
     void Awake()
-    {
+    {        
         // referencias
         playerFacing = GetComponent<PlayerFacing>();
         animationController = GetComponent<PlayerAnimationController>();
@@ -72,4 +74,5 @@ public class PlayerController : MonoBehaviour
     {
         stateMachine.CurrentState.PhysicsUpdate();
     }
+
 }
