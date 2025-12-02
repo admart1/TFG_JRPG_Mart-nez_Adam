@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public PlayerAnimationController animationController;
     [HideInInspector] public InputReader input;
     [HideInInspector] public ExplorationAttackHitbox attackHitbox;
+    [HideInInspector] public PlayerHeightSystem heightSystem;
+    [HideInInspector] public PlayerTriggerDetector triggerDetector;
 
     [Header("Persoanjes")]
     public PartyManager partyManager;
@@ -25,9 +27,13 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public PlayerMovementState MovementState;
     [HideInInspector] public PlayerAttackState AttackState;
     [HideInInspector] public PlayerDashState DashState;
+    [HideInInspector] public PlayerFallState FallState;
 
     [Header("Nivel del dash")]
     [SerializeField] public DashLevel currentDashLevel = DashLevel.Level1;
+
+    [Header("Sistema de Tiles/Altura")]
+    public int initialHeight = 0;
 
     public PlayerStateMachine stateMachine;
 
@@ -38,6 +44,8 @@ public class PlayerController : MonoBehaviour
         animationController = GetComponent<PlayerAnimationController>();
         input = GetComponent<InputReader>();
         attackHitbox = GetComponentInChildren<ExplorationAttackHitbox>();
+        heightSystem = GetComponent<PlayerHeightSystem>();
+        triggerDetector = GetComponentInChildren<PlayerTriggerDetector>();
 
         // crear estados
         stateMachine = new PlayerStateMachine();
@@ -46,18 +54,21 @@ public class PlayerController : MonoBehaviour
         MovementState = new PlayerMovementState();
         AttackState = new PlayerAttackState();
         DashState = new PlayerDashState();
+        FallState = new PlayerFallState();
 
         // inicializar estados
         IdleState.Initialize(this, stateMachine);
         MovementState.Initialize(this, stateMachine);
         AttackState.Initialize(this, stateMachine);
         DashState.Initialize(this, stateMachine);
+        FallState.Initialize(this, stateMachine);
     }
 
     void Start()
     {
         stateMachine.Initialize(IdleState);
         character = partyManager.activeCharacter;
+        heightSystem.SetHeight(initialHeight);
     }
 
     void Update()

@@ -11,7 +11,7 @@ public enum DashLevel
 public class PlayerDashState : PlayerState
 {
     // base
-    private readonly float dashDuration = 0.15f;
+    private readonly float dashDuration = 0.1f;
     private readonly float dashSpeed = 12f;
 
     private float timer;

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - MovementTrigger
   layers:
   - Default
   - TransparentFX
@@ -11,32 +12,32 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
   - Enemies
   - 
   - 
   - 
+  - Player_Ramp
+  - Player_0
+  - Player_1
+  - Player_2
+  - Player_5
+  - Player_No_Collisions
+  - 
+  - 
+  - 
+  - PlayerAttack
+  - PlayerVisuals
+  - PlayerHurt
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground_Ramp
+  - Ground_0
+  - Ground_1
+  - Ground_2
+  - Ground_5
   m_SortingLayers:
   - name: Default
     uniqueID: 0
