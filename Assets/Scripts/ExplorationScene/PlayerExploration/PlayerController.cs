@@ -86,4 +86,9 @@ public class PlayerController : MonoBehaviour
         stateMachine.CurrentState.PhysicsUpdate();
     }
 
+    // Funciones de utilidad
+    public void SetVelocity(Vector2 vel)
+    {
+        Rigidbody.linearVelocity = vel;
+    }
 }

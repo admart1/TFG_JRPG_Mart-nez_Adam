@@ -6,6 +6,7 @@ public class WorldTrigger : MonoBehaviour
     public bool isLedge = false;
     public bool isRamp = false;
     public bool simpleHeightchange = false;
+    public bool dashLanding = false;
 
     [Header("Behaviour")]
     public bool changesHeight = false;

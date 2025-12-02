@@ -37,4 +37,19 @@ public class PlayerHeightSystem : MonoBehaviour
     {
         ApplyHeightLayer();
     }
+    /*
+    public void EnterRamp()
+    {
+        if (movementCollider == null) return;
+
+        int layerIndex = LayerMask.NameToLayer("Player_Ramp");
+        if (layerIndex == -1) return;
+
+        movementCollider.layer = layerIndex;
+    }
+
+    public void ExitRamp()
+    {
+        ApplyHeightLayer();
+    }*/
 }

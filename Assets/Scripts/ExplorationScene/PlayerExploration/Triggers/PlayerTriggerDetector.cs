@@ -23,7 +23,7 @@ public class PlayerTriggerDetector : MonoBehaviour
             {
                 currentTrigger = null;
 
-                Debug.Log($"Trigger EXIT: {trigger.gameObject.name}");
+                //Debug.Log($"Trigger EXIT: {trigger.gameObject.name}");
             }
         }
     }

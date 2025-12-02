@@ -8,17 +8,12 @@ using UnityEngine.UIElements.Experimental;
 public class PlayerMovementState : PlayerState
 {
     private Vector2 rawInput;
-    public override void Enter()
-    {
-
-    }
-
     public override void HandleInput()
     {
         if (player.input == null) return;
 
         rawInput = player.input.Move.normalized; // raw para el facingdirection y normalizado para el movimiento
-        player.MoveDirection = rawInput.normalized;
+        player.MoveDirection = rawInput;
 
         if (player.input.AttackPressed)
         {
@@ -37,13 +32,11 @@ public class PlayerMovementState : PlayerState
             player.DashState.SetDashLevel(player.currentDashLevel);
             stateMachine.ChangeState(player.DashState);
         }
-
-
     }
 
     public override void PhysicsUpdate()
     {
-        HandleSimpleHeightChange();
+        HandleTriggersHeightChange();
 
         HandleLedge();
 
@@ -53,7 +46,7 @@ public class PlayerMovementState : PlayerState
         }
         else
         {
-            player.Rigidbody.linearVelocity = player.MoveDirection * player.MovementSpeed;
+            player.SetVelocity(player.MoveDirection * player.MovementSpeed);
         }
     }
 
@@ -69,46 +62,56 @@ public class PlayerMovementState : PlayerState
         );
     }
 
-    private void HandleSimpleHeightChange()
+    private void HandleTriggersHeightChange()
     {
         WorldTrigger trigger = player.triggerDetector.currentTrigger;
 
+        // simples
         if (trigger != null && trigger.simpleHeightchange)
         {
             player.heightSystem.SetHeight(trigger.targetHeight);
         }
+
+        // rampas
+      /*  if (trigger != null && trigger.isRamp)
+        {
+            player.heightSystem.EnterRamp();
+        }*/
     }
 
     private void HandleRampMovement()
     {
-
         WorldTrigger trigger = player.triggerDetector.currentTrigger;
         if (trigger == null || !trigger.isRamp)
             return;
 
-        Vector2 direction = player.MoveDirection;
-        PlayerFacing.FacingDirection facing = player.playerFacing.facingDirection;
+        Vector2 input = player.MoveDirection;
 
+        // Si no hay movimiento horizontal, no hay efecto de rampa
+        if (Mathf.Abs(input.x) <= 0.01f)
+        {
+            player.SetVelocity(input * (player.MovementSpeed * trigger.rampSpeedModifier));
+            return;
+        }
 
+        // Rampas hacia la derecha
         if (trigger.rampToRight)
         {
-            if (facing == PlayerFacing.FacingDirection.East)
-                direction = new Vector2(1, trigger.rampInclination);
-            else if (facing == PlayerFacing.FacingDirection.West)
-                direction = new Vector2(-1, -trigger.rampInclination);
+            input.y += input.x * trigger.rampInclination;
         }
 
+        // Rampas hacia la izquierda
         if (trigger.rampToLeft)
         {
-            if (facing == PlayerFacing.FacingDirection.East)
-                direction = new Vector2(-1, -trigger.rampInclination);
-            else if (facing == PlayerFacing.FacingDirection.West)
-                direction = new Vector2(1, trigger.rampInclination);
+            input.y -= input.x * trigger.rampInclination;
         }
 
-        player.Rigidbody.linearVelocity = direction * (player.MovementSpeed * trigger.rampSpeedModifier);
+        // Normalización para mantener velocidad constante
+        input = input.normalized;
 
+        player.SetVelocity(input * (player.MovementSpeed * trigger.rampSpeedModifier));
     }
+
 
     private void HandleLedge()
     {
@@ -118,6 +121,7 @@ public class PlayerMovementState : PlayerState
         if (IsMovingTowardsLedge(trigger))
         {
             player.FallState.targetHeight = trigger.targetHeight;
+            player.FallState.SetupFall(trigger.targetHeight, player.MoveDirection, PlayerFallState.FallOrigin.FromMovement);
             stateMachine.ChangeState(player.FallState);
         }
     }

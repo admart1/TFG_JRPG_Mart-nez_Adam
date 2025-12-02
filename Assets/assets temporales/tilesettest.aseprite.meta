@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: tilesettest
     originalName: 
-    pivot: {x: 1.875, y: -9}
+    pivot: {x: 0.75, y: -9}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,7 +137,7 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 128
+      width: 320
       height: 32
     spriteID: 14b2719d27f61be40a8c0436e80b49f2
     spriteBone: []
@@ -169,7 +169,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 288
-        width: 128
+        width: 320
         height: 32
       spriteId: 14b2719d27f61be40a8c0436e80b49f2
     linkedCells: []
@@ -182,4 +182,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 480, y: 320}
-  previousTextureSize: {x: 256, y: 64}
+  previousTextureSize: {x: 512, y: 64}

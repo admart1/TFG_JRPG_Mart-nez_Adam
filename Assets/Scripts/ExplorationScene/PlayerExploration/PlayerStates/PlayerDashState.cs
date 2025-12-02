@@ -32,6 +32,9 @@ public class PlayerDashState : PlayerState
     // buffers
     private bool bufferedAttack = false;
     private bool bufferedDash = false;
+    private int bufferedFallTargetHeight = -1; // -1= no hay caida
+    private bool skipFall = true;
+    public WorldTrigger bufferedTrigger = null;
 
     #region NIVELES DEL DASH
     public void SetDashLevel(DashLevel level)
@@ -72,10 +75,12 @@ public class PlayerDashState : PlayerState
 
         timer = dashDuration;
         endLagActive = false;
+        skipFall = true;
+        bufferedFallTargetHeight = -1;
 
         //player.SetInvulnerable(true);   PARA EL FUTURO.
 
-        player.Rigidbody.linearVelocity = player.MoveDirection * dashSpeed;
+        player.SetVelocity(player.MoveDirection * dashSpeed);
 
         player.animationController.PlayAnimation(
             "Dash",
@@ -85,16 +90,19 @@ public class PlayerDashState : PlayerState
 
     public override void HandleInput()
     {
-            if (player.input.AttackPressed)
-            {
-                bufferedAttack = true;
-                bufferedDash = false;
-            }
-            if (player.input.DashPressed && CanDash() && timer <= dashDuration * 0.6f)
-            {
-                bufferedDash = true;
-                bufferedAttack = false;
-            }
+        if (IsFallingThroughLedge())
+            return;
+
+        if (player.input.AttackPressed)
+        {
+            bufferedAttack = true;
+            bufferedDash = false;
+        }
+        if (player.input.DashPressed && CanDash() && timer <= dashDuration * 0.6f)
+        {
+            bufferedDash = true;
+            bufferedAttack = false;
+        }
     }
     
 
@@ -109,7 +117,7 @@ public class PlayerDashState : PlayerState
                 endLagActive = true;
                 timer = endLagDuration;
 
-                player.Rigidbody.linearVelocity = Vector2.zero;
+                player.SetVelocity(Vector2.zero);
 
                 // player.SetInvulnerable(false);   PARA EL FUTUR
             }
@@ -127,15 +135,37 @@ public class PlayerDashState : PlayerState
 
     public override void PhysicsUpdate()
     {
-        if (!endLagActive) // dash
-        {
-            player.Rigidbody.linearVelocity = player.MoveDirection * dashSpeed;
-        }
-        else                // endlag
-        {
-            player.Rigidbody.linearVelocity = Vector2.zero;
-        }
+        HandleTriggersHeightChange();
+
+        Vector2 velocity = ComputeDashVelocity();
+        player.SetVelocity(velocity);
     }
+
+    private Vector2 ComputeDashVelocity()
+    {
+        if (endLagActive)
+            return Vector2.zero;
+
+        Vector2 direction = player.MoveDirection;
+        var trigger = player.triggerDetector.currentTrigger;
+
+        if (trigger != null && trigger.isRamp)
+            direction = ApplyRampInclination(direction, trigger);
+
+        return direction * dashSpeed;
+    }
+
+    private Vector2 ApplyRampInclination(Vector2 input, WorldTrigger trigger)
+    {
+        if (Mathf.Abs(input.x) <= 0.01f)
+            return input; 
+
+        if (trigger.rampToRight) input.y += input.x * trigger.rampInclination;
+        if (trigger.rampToLeft) input.y -= input.x * trigger.rampInclination;
+
+        return input.normalized;
+    }
+
 
     private void ExitDash()
     {
@@ -163,6 +193,21 @@ public class PlayerDashState : PlayerState
             return;
         }
 
+        // EXIT CAÍDA
+        var finalTrigger = player.triggerDetector.currentTrigger;
+        skipFall = finalTrigger != null && finalTrigger.dashLanding;
+        if (!skipFall && bufferedFallTargetHeight != -1)
+        {
+            player.FallState.targetHeight = bufferedFallTargetHeight;
+
+            player.FallState.SetupFall(bufferedFallTargetHeight, player.MoveDirection, PlayerFallState.FallOrigin.FromDash);
+
+            bufferedFallTargetHeight = -1;
+
+            stateMachine.ChangeState(player.FallState);
+            return;
+        }
+
         // EXIT NORMAL
         if (player.input.Move == Vector2.zero)
             stateMachine.ChangeState(player.IdleState);
@@ -179,14 +224,50 @@ public class PlayerDashState : PlayerState
     {
         if (cooldownTimer > 0f) cooldownTimer -= Time.deltaTime;
     }
+
+    private void HandleTriggersHeightChange()
+    {
+        WorldTrigger trigger = player.triggerDetector.currentTrigger;
+
+        if (trigger == null) return;
+
+        // simples
+        if (trigger.simpleHeightchange)
+        {
+            player.heightSystem.SetHeight(trigger.targetHeight);
+        }
+
+        // rampas
+     /*   if (trigger.isRamp)
+        {
+            player.heightSystem.EnterRamp();
+        }*/
+
+        if (trigger.isLedge && !trigger.dashLanding && bufferedFallTargetHeight == -1)
+        {
+            bufferedAttack = false;
+            bufferedDash = false;
+
+            bufferedFallTargetHeight = trigger.targetHeight;
+
+            bufferedTrigger = player.triggerDetector.currentTrigger;
+
+            skipFall = false; 
+        }
+
+        // dash landing
+        if (trigger.dashLanding)
+            skipFall = true;
+    }
+
+    private bool IsFallingThroughLedge()
+    {
+        var trigger = player.triggerDetector.currentTrigger;
+        return trigger != null && trigger.isLedge;
+    }
 }
 
  /* Dash implementaciones pendientes
- endlag
  invulnerabilidad (proyectiles y ataques, no enemigos)
- dash + ataque chain
- ataque + dash chain
- dash + dash chain
- curva de velocidad
  muros atravesables SOLO con dash
   */
