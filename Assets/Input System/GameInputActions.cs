@@ -97,7 +97,7 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""ab997981-d319-49ad-b3f2-0c9354dff3ab"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone(min=1.401298E-45,max=10)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -132,6 +132,33 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""Dash"",
                     ""type"": ""Button"",
                     ""id"": ""cea2ad51-d191-43bc-bfc5-a7f8ae55a58d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwordMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""7753b108-26cd-4095-87de-8adcd4269aa4"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwapActiveSword"",
+                    ""type"": ""Button"",
+                    ""id"": ""02fa5ded-874e-4a3c-b8a5-053f96e94d17"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TransitionToBattle"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec73c4ff-3f54-4adf-ada4-9bbfe028f91c"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -292,6 +319,72 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9d27b078-c327-481d-a9ab-75f05291aa1a"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwordMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bea43ad-adfb-4b93-9fb3-057822abafcb"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwordMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b90983f-45a4-411c-b6fa-abd38f198525"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwapActiveSword"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b7d20a62-e8fe-41d8-b08b-fd71d2df6d83"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwapActiveSword"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""994a6ba5-0b67-470b-a7e9-afc9823f76c3"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TransitionToBattle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11ce97d6-b119-4bb4-a9fb-59606ca9dc0c"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TransitionToBattle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -373,6 +466,9 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
         m_PlayerExploration_Menu = m_PlayerExploration.FindAction("Menu", throwIfNotFound: true);
         m_PlayerExploration_ChangeCharacter = m_PlayerExploration.FindAction("ChangeCharacter", throwIfNotFound: true);
         m_PlayerExploration_Dash = m_PlayerExploration.FindAction("Dash", throwIfNotFound: true);
+        m_PlayerExploration_SwordMenu = m_PlayerExploration.FindAction("SwordMenu", throwIfNotFound: true);
+        m_PlayerExploration_SwapActiveSword = m_PlayerExploration.FindAction("SwapActiveSword", throwIfNotFound: true);
+        m_PlayerExploration_TransitionToBattle = m_PlayerExploration.FindAction("TransitionToBattle", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -464,6 +560,9 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerExploration_Menu;
     private readonly InputAction m_PlayerExploration_ChangeCharacter;
     private readonly InputAction m_PlayerExploration_Dash;
+    private readonly InputAction m_PlayerExploration_SwordMenu;
+    private readonly InputAction m_PlayerExploration_SwapActiveSword;
+    private readonly InputAction m_PlayerExploration_TransitionToBattle;
     /// <summary>
     /// Provides access to input actions defined in input action map "PlayerExploration".
     /// </summary>
@@ -495,6 +594,18 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PlayerExploration/Dash".
         /// </summary>
         public InputAction @Dash => m_Wrapper.m_PlayerExploration_Dash;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerExploration/SwordMenu".
+        /// </summary>
+        public InputAction @SwordMenu => m_Wrapper.m_PlayerExploration_SwordMenu;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerExploration/SwapActiveSword".
+        /// </summary>
+        public InputAction @SwapActiveSword => m_Wrapper.m_PlayerExploration_SwapActiveSword;
+        /// <summary>
+        /// Provides access to the underlying input action "PlayerExploration/TransitionToBattle".
+        /// </summary>
+        public InputAction @TransitionToBattle => m_Wrapper.m_PlayerExploration_TransitionToBattle;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -536,6 +647,15 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @SwordMenu.started += instance.OnSwordMenu;
+            @SwordMenu.performed += instance.OnSwordMenu;
+            @SwordMenu.canceled += instance.OnSwordMenu;
+            @SwapActiveSword.started += instance.OnSwapActiveSword;
+            @SwapActiveSword.performed += instance.OnSwapActiveSword;
+            @SwapActiveSword.canceled += instance.OnSwapActiveSword;
+            @TransitionToBattle.started += instance.OnTransitionToBattle;
+            @TransitionToBattle.performed += instance.OnTransitionToBattle;
+            @TransitionToBattle.canceled += instance.OnTransitionToBattle;
         }
 
         /// <summary>
@@ -562,6 +682,15 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @SwordMenu.started -= instance.OnSwordMenu;
+            @SwordMenu.performed -= instance.OnSwordMenu;
+            @SwordMenu.canceled -= instance.OnSwordMenu;
+            @SwapActiveSword.started -= instance.OnSwapActiveSword;
+            @SwapActiveSword.performed -= instance.OnSwapActiveSword;
+            @SwapActiveSword.canceled -= instance.OnSwapActiveSword;
+            @TransitionToBattle.started -= instance.OnTransitionToBattle;
+            @TransitionToBattle.performed -= instance.OnTransitionToBattle;
+            @TransitionToBattle.canceled -= instance.OnTransitionToBattle;
         }
 
         /// <summary>
@@ -755,6 +884,27 @@ public partial class @GameInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SwordMenu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSwordMenu(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SwapActiveSword" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSwapActiveSword(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "TransitionToBattle" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTransitionToBattle(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

@@ -89,12 +89,6 @@ public class CharacterModel
         activeSword = activeSword == ActiveSword.Slot1 ? ActiveSword.Slot2 : ActiveSword.Slot1;
     }
 
-    public void EquipSword(EquipableSword sword, int slot)
-    {
-        if (slot == 1) SwordSlot1 = sword;
-        else if (slot == 2) SwordSlot2 = sword;
-    }
-
     public void SetActiveSword(int slot)
     {
         if (slot == 1 && activeSword != ActiveSword.Slot1)
@@ -106,5 +100,18 @@ public class CharacterModel
             activeSword = ActiveSword.Slot2;
         }
     }
+
+public void EquipSword(EquipableSword sword, int slot)
+{
+    if (slot == 1 && SwordSlot2 == sword)
+        SwordSlot2 = definition.emptySword;
+    else if (slot == 2 && SwordSlot1 == sword)
+        SwordSlot1 = definition.emptySword;
+
+    if (slot == 1) SwordSlot1 = sword;
+    else if (slot == 2) SwordSlot2 = sword;
+}
+
+
     #endregion
 }

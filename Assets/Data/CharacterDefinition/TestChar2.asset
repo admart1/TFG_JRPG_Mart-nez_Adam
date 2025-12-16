@@ -18,6 +18,7 @@ MonoBehaviour:
   levelProgression: {fileID: 11400000, guid: 1ba79a1daeaecd94c93442f07c4825d1, type: 2}
   portrait: {fileID: 0}
   overworldAnimator: {fileID: 0}
+  emptySword: {fileID: 11400000, guid: 1905ba36689916048b3ac68d55c5580e, type: 2}
   startingLevel: 1
   startingHP: 10
   startingMana: 10

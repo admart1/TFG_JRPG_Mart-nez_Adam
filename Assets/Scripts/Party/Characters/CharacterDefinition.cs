@@ -18,6 +18,9 @@ public class CharacterDefinition : ScriptableObject
     public Sprite portrait;                 
     public RuntimeAnimatorController overworldAnimator;
 
+    [Header("Empty sword TEMPORAL")]
+    public EquipableSword emptySword;
+
     // ================================
     // DATOS DINÁMICOS (a falta de un sistema de guardado)
     // ================================

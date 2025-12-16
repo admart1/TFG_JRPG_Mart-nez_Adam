@@ -15,6 +15,15 @@ public class PlayerMovementState : PlayerState
         rawInput = player.input.Move.normalized; // raw para el facingdirection y normalizado para el movimiento
         player.MoveDirection = rawInput;
 
+        if (player.input.ToBattlePressed && player.combatDetector.SelectedEnemy != null)
+        {
+            CombatTransitionManager.Instance.StartCombat(
+              player.gameObject,
+              player.combatDetector.SelectedEnemy,
+              CombatAdvantage.Neutral
+            );
+        }
+
         if (player.input.AttackPressed)
         {
             stateMachine.ChangeState(player.AttackState);
@@ -31,6 +40,16 @@ public class PlayerMovementState : PlayerState
         {
             player.DashState.SetDashLevel(player.currentDashLevel);
             stateMachine.ChangeState(player.DashState);
+        }
+
+        if (player.input.SwordMenuPressed)
+        {
+            stateMachine.ChangeState(player.SwordMenuState);
+        }
+
+        if (player.input.SwapSwordsPressed)
+        {
+            player.character.SwitchActiveSword();
         }
     }
 

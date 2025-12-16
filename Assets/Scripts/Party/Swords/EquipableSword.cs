@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Sword/New Sword", fileName = "NewSword")]
 public class EquipableSword : ScriptableObject
@@ -8,7 +8,7 @@ public class EquipableSword : ScriptableObject
     public string displayName;
 
     [Header("Arte")]
-    public Sprite icon;
+    public Texture2D icon;
 
     [Header("Stats")]
     public StatsModifier statsModifier;

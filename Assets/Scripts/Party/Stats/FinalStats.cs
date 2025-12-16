@@ -9,7 +9,7 @@ public struct FinalStats
     public int defense;
     public int speed;
 
-    public FinalStats(int maxHP, int offense, int defense, int speed) // se llama desde basestats y crea el FinalStats con los stats del SO
+    public FinalStats(int maxHP, int maxMana, int offense, int defense, int speed) // se llama desde basestats y crea el FinalStats con los stats del SO
     {
         this.maxHP = maxHP;
         this.offense = offense;

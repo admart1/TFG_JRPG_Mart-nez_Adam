@@ -14,6 +14,7 @@ public class DebugOverlay : MonoBehaviour
     private string sword1Name;
     private string sword2Name;
     private string currentAnimation;
+    private int currentLayer;
 
     void Update()
     {
@@ -56,6 +57,11 @@ public class DebugOverlay : MonoBehaviour
         {
             currentAnimation = player.animationController.GetCurrentAnimationName();
         }
+
+        if (player != null && player.animationController != null)
+        {
+            currentLayer = player.heightSystem.movementCollider.layer;
+        }
     }
 
     void OnGUI()
@@ -77,5 +83,7 @@ public class DebugOverlay : MonoBehaviour
         GUI.Label(new Rect(x, y, 400, lineHeight), $"Espada Slot2: {sword2Name}");
         y += lineHeight;
         GUI.Label(new Rect(x, y, 400, lineHeight), $"Animación: {currentAnimation}");
+        y += lineHeight;
+        GUI.Label(new Rect(x, y, 400, lineHeight), $"Layer player: {currentLayer}");
     }
 }

@@ -10,6 +10,14 @@ public class PlayerIdleState : PlayerState
 
     public override void HandleInput()
     {
+        if (player.input.ToBattlePressed && player.combatDetector.SelectedEnemy != null)
+        {
+            CombatTransitionManager.Instance.StartCombat(
+              player.gameObject,
+              player.combatDetector.SelectedEnemy,
+              CombatAdvantage.Neutral
+            );
+        }
 
         if (player.input.Move != Vector2.zero)              // ir a movimiento
         {
@@ -25,6 +33,16 @@ public class PlayerIdleState : PlayerState
         {
             player.partyManager.NextCharacter();
             player.character = player.partyManager.activeCharacter;
+        }
+
+        if (player.input.SwordMenuPressed)
+        {
+            stateMachine.ChangeState(player.SwordMenuState);
+        }
+
+        if (player.input.SwapSwordsPressed)
+        {
+            player.character.SwitchActiveSword();
         }
     }
 

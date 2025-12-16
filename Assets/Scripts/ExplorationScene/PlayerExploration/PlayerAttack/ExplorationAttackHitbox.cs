@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class ExplorationAttackHitbox : MonoBehaviour
 {
+    [Header("Referencias")]
     private BoxCollider2D hitbox;
     private PlayerFacing playerFacing;
 
-    [Header("Offset general")]
-    [Tooltip("Debido a estar usando un addon para exportar de forma automatica desde aseprite, el pivot de player no es correcto asi que hay que determinar un offset concreto de x0.005 e y0.698")]
+    [Header("Offset general")] //0offset concreto de x0.005 e y0.698
     public Vector2 baseCenterOffset = new Vector2(0.005f, 0.698f);
-
 
     [Header("Offsets por dirección")]
     public Vector2 North = new Vector2(0f, 0.45f);
@@ -25,7 +24,7 @@ public class ExplorationAttackHitbox : MonoBehaviour
     public LayerMask hitMask;
 
     [Header("Daño")]
-    public int damage = 1;      // mas adelante recibira el daño concreto a través de attackstate, o quiza daño fijo..
+    public int damage = 1;
 
     private HashSet<IDamageable> hitTargets = new HashSet<IDamageable>();
     private bool active = false;
