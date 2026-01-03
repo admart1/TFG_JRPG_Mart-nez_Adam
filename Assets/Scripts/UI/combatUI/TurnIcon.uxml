@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/combatUI/TurnIcon.uss?fileID=7433441132597879392&amp;guid=ff360296fab8eb04eae7363aec60272c&amp;type=3#TurnIcon" />
+    <ui:VisualElement name="TurnIcon" class="turn-default" style="width: 60px; height: 60px; margin-bottom: 5px; background-color: gray;">
+        <ui:Image name="Avatar" style="width: 50px; height: 50px; margin: auto;" />
+    </ui:VisualElement>
+</ui:UXML>

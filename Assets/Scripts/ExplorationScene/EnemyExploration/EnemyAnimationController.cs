@@ -20,7 +20,9 @@ public class EnemyAnimationController : MonoBehaviour
     public void PlayHurt() => animator.Play("hurt");
     public void PlayDeath() => animator.Play("death");
     public void PlayAttack() => animator.Play("attack");
-    public void PlayRecovery() => animator.Play("hurt");
+    public void PlayRecovery() => animator.Play("recovery");
+    public void PlayCharging() => animator.Play("charging");
+    public void PlayStun() => animator.Play("stun");
 
     // RELAY
     public void AnimationEvent(string eventName)

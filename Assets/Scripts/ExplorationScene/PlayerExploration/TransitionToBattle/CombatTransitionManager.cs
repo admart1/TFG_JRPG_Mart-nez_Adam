@@ -29,31 +29,14 @@ public class CombatTransitionManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void StartCombat(GameObject player, ExplorationEnemyBase enemy, CombatAdvantage advantageType)
+    public void StartCombat(ExplorationEnemyBase enemy, CombatAdvantage advantageType)
     {
-        if (isTransitioning || player == null || enemy == null)
+        if (isTransitioning || enemy == null)
             return;
 
-        StartCoroutine(TransitionRoutine(player, enemy, advantageType));
-    }
-
-    private IEnumerator TransitionRoutine(GameObject player, ExplorationEnemyBase enemy, CombatAdvantage advantageType)
-    {
         isTransitioning = true;
 
-        // bloquear controles del jugador
-
-        // animacion al combat.e..
-        float timer = 0f;
-        while (timer < transitionDuration)
-        {
-            timer += Time.deltaTime;
-            yield return null;
-        }
-
-        // Iniciar el combate
-        Debug.Log($"Iniciando combate con {enemy.name}, ventaja: {advantageType}");
-        // CombatManager.Instance.StartCombat(player, enemy, advantage); o algo asi
+        GameSession.Instance.StartCombat(enemy, advantageType);
 
         isTransitioning = false;
     }

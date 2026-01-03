@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static CombatManager;
 
 public class GameSession : MonoBehaviour
 {
@@ -9,10 +11,17 @@ public class GameSession : MonoBehaviour
     public List<CharacterModel> PlayerParty { get; private set; }
 
     public EnemyGroupData CurrentEnemyGroup { get; private set; }
+    public ExplorationEnemyBase CurrentEnemy { get; private set; }
+    [SerializeField] public PlayerController playerController;
 
     [SerializeField] private GameObject explorationRoot;
 
     private bool combatSceneLoaded = false;
+    public PartyManager partyManager;
+
+    public CombatAdvantage CurrentCombatAdvantage { get; private set; }
+    public Vector3 LastSpawnPoint;
+    public Vector3 LastEnterCombatPoint;
 
     private void Awake()
     {
@@ -28,45 +37,39 @@ public class GameSession : MonoBehaviour
         PlayerParty = new List<CharacterModel>();
     }
 
-    // REGISTRAR JUGADOR
-    public void RegisterPlayer(CharacterModel model)
+    void Start()
     {
-        if (model == null)
+        if (partyManager != null)
         {
-            Debug.LogError("GameSession: Intentando registrar CharacterModel null");
-            return;
+            InitializeParty(partyManager);
         }
-
-        if (!PlayerParty.Contains(model))
+        else
         {
-            PlayerParty.Add(model);
+            Debug.LogWarning("GameSession: PartyManager no asignado");
         }
     }
 
-    // ENTRAR EN COMBATE
-    public void StartCombat(EnemyGroupData enemyGroup)
+    // REGISTRAR JUGADOR
+    public void InitializeParty(PartyManager partyManager)
     {
-        if (combatSceneLoaded)
-        {
-            Debug.LogWarning("GameSession: Combate ya activo");
-            return;
-        }
+        PlayerParty = new List<CharacterModel>(partyManager.GetAllCharacters());
+    }
 
-        if (enemyGroup == null)
-        {
-            Debug.LogError("GameSession: EnemyGroupData es null");
-            return;
-        }
+    // ENTRAR EN COMBATE
+    public void StartCombat(ExplorationEnemyBase enemy, CombatAdvantage advantage)
+    {
+        if (combatSceneLoaded) return;
+        if (enemy.enemyGroupData == null) return;
 
-        CurrentEnemyGroup = enemyGroup;
+        LastEnterCombatPoint = playerController.transform.position;
 
-        // desactivar explo
+        CurrentEnemy = enemy;
+        CurrentEnemyGroup = enemy.enemyGroupData;
+        CurrentCombatAdvantage = advantage;
+
         if (explorationRoot != null)
             explorationRoot.SetActive(false);
-        else
-            Debug.LogWarning("GameSession: explorationRoot no asignado");
 
-        // cargar escena de combate
         SceneManager.LoadScene("CombatScene", LoadSceneMode.Additive);
         combatSceneLoaded = true;
     }
@@ -89,6 +92,69 @@ public class GameSession : MonoBehaviour
         if (explorationRoot != null)
             explorationRoot.SetActive(true);
 
+        // solucion temporal a que el menu de espadas aparezca abierto a salir de cobmate
+        InventoryUIController inventoryUI = FindFirstObjectByType<InventoryUIController>();
+        if (inventoryUI != null)
+            inventoryUI.CloseMenu();
+
+        PlayerHUDController hudUI = FindFirstObjectByType<PlayerHUDController>();
+        hudUI.Refresh();
+
+        StartCoroutine(UnloadCombatScene());
+    }
+
+    private IEnumerator UnloadCombatScene()
+    {
+        yield return SceneManager.UnloadSceneAsync("CombatScene");
         combatSceneLoaded = false;
+    }
+
+    public void ResolveCombatResult(CombatResult result)
+    {
+        switch (result)
+        {
+            case CombatResult.Victory:
+                HandleVictory();
+                break;
+
+            case CombatResult.Defeat:
+                HandleDefeat();
+                break;
+
+            case CombatResult.Escape:
+                HandleEscape();
+                break;
+        }
+    }
+
+    private void HandleVictory()
+    {
+        CurrentEnemy.gameObject.SetActive(false);
+        Debug.Log("victory");
+    }
+
+    private void HandleDefeat()
+    {
+        foreach (var member in PlayerParty)
+        {
+            member.currentHP = member.GetFinalStats().maxHP;
+            member.currentMana = member.GetFinalStats().maxMana;
+        }
+        if (playerController != null)
+        {
+            Vector3 spawn = LastSpawnPoint != Vector3.zero ? LastSpawnPoint : Vector3.zero;
+            playerController.transform.position = spawn;
+        }
+    }
+
+    private void HandleEscape()
+    {
+        CurrentEnemy.stateMachine.ChangeState(CurrentEnemy.RecoveryState);
+
+        if (playerController != null)
+        {
+            Vector3 spawn = LastEnterCombatPoint != Vector3.zero ? LastEnterCombatPoint : Vector3.zero;
+            playerController.transform.position = spawn;
+        }
     }
 }

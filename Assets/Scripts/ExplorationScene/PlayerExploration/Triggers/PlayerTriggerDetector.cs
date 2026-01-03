@@ -11,7 +11,6 @@ public class PlayerTriggerDetector : MonoBehaviour
         if (collision.TryGetComponent(out WorldTrigger trigger) && trigger.CompareTag("MovementTrigger"))
         {
             currentTrigger = trigger;
-            Debug.Log($"Trigger ENTER: {trigger.gameObject.name} ({trigger.triggerName})");
         }
     }
 

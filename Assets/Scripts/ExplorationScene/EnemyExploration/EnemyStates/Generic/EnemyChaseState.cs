@@ -6,6 +6,7 @@ public class EnemyChaseState : EnemyState
     private float moveSpeed = 2f;
     public float maxAggroDistance = 3f;
     public Vector2 targetPos; 
+
     public override void Enter()
     {
         enemy.animController?.PlayMovement();
@@ -63,6 +64,9 @@ public class EnemyChaseState : EnemyState
 
         // COMPORTAMIENTO
         Vector2 dir = (targetPos - (Vector2)enemy.transform.position).normalized;
+        enemy.SetVelocity(dir * moveSpeed);
+
+        enemy.HandleFlip(dir);
         enemy.SetVelocity(dir * moveSpeed);
     }
 }

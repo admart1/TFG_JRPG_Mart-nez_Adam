@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDefinition
   characterId: char_character2
   displayName: Personaje 2
-  baseStats: {fileID: 11400000, guid: a5abc66c7a7a55246b1d63d14a97f5f0, type: 2}
+  baseStats: {fileID: 11400000, guid: 5d10cedff3f10564f81b528730035a2e, type: 2}
   levelProgression: {fileID: 11400000, guid: 1ba79a1daeaecd94c93442f07c4825d1, type: 2}
-  portrait: {fileID: 0}
+  combatSprite: {fileID: 6629812147117271838, guid: ff280964de47a7a4b988091274fae9a8, type: 3}
   overworldAnimator: {fileID: 0}
+  playerIcon: {fileID: 2800000, guid: fc148da80b3c29b4abf160d2ddb60be6, type: 3}
   emptySword: {fileID: 11400000, guid: 1905ba36689916048b3ac68d55c5580e, type: 2}
   startingLevel: 1
-  startingHP: 10
+  startingHP: 35
   startingMana: 10
-  startingSword1: {fileID: 11400000, guid: 9ebb89afce4273e4b95987aa670b3438, type: 2}
-  startingSword2: {fileID: 11400000, guid: 9ebb89afce4273e4b95987aa670b3438, type: 2}
+  startingSword1: {fileID: 11400000, guid: bbc19f840f9fc0241af1ed17acbcf60a, type: 2}
+  startingSword2: {fileID: 11400000, guid: bbc19f840f9fc0241af1ed17acbcf60a, type: 2}
   activeSword: 0

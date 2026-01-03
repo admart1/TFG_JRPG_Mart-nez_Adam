@@ -1,0 +1,262 @@
+fileFormatVersion: 2
+guid: 1d736b51caea3e34ba6c80d0ff9908a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5798432665546305980
+    second: top_side_cesped_0
+  - first:
+      213: -5379487039032461295
+    second: top_side_cesped_1
+  - first:
+      213: -5226943090202922906
+    second: top_side_cesped_2
+  - first:
+      213: 618696165493752292
+    second: top_side_cesped_3
+  - first:
+      213: 3216862017073754686
+    second: top_side_cesped_4
+  - first:
+      213: 8214720547857720052
+    second: top_side_cesped_5
+  - first:
+      213: 3208152379033267323
+    second: top_side_cesped_6
+  - first:
+      213: -6532182908358015183
+    second: top_side_cesped_7
+  - first:
+      213: 5072063408499853419
+    second: top_side_cesped_8
+  - first:
+      213: 8155430873116561262
+    second: top_side_cesped_9
+  - first:
+      213: 3190484119246096475
+    second: top_side_cesped_10
+  - first:
+      213: 4027486314768660307
+    second: top_side_cesped_11
+  - first:
+      213: -7752374005710483491
+    second: top_side_cesped_12
+  - first:
+      213: 5682701652187071713
+    second: top_side_cesped_13
+  - first:
+      213: 8615156010178770326
+    second: top_side_cesped_14
+  - first:
+      213: 3540631435318024988
+    second: top_side_cesped_15
+  - first:
+      213: 5085929776434859900
+    second: top_side_cesped_16
+  - first:
+      213: -1574716573684812235
+    second: top_side_cesped_17
+  - first:
+      213: 2069030620967371709
+    second: top_side_cesped_18
+  - first:
+      213: -6827300749787229213
+    second: top_side_cesped_19
+  - first:
+      213: 9008850872623019708
+    second: top_side_cesped_20
+  - first:
+      213: -6340380070413266174
+    second: top_side_cesped_21
+  - first:
+      213: 1187457227265634553
+    second: top_side_cesped_22
+  - first:
+      213: -616719996809554588
+    second: top_side_cesped_23
+  - first:
+      213: -1837751335183752186
+    second: top_side_cesped_24
+  - first:
+      213: -1105724761270884175
+    second: top_side_cesped_25
+  - first:
+      213: -5292073867968720314
+    second: top_side_cesped_26
+  - first:
+      213: 7211370703605294146
+    second: top_side_cesped_27
+  - first:
+      213: 4712503737318696184
+    second: top_side_cesped_28
+  - first:
+      213: 6307793697068982784
+    second: top_side_cesped_29
+  - first:
+      213: 6272719645311977485
+    second: top_side_cesped_30
+  - first:
+      213: 4536229737704995843
+    second: top_side_cesped_31
+  - first:
+      213: -3982751989166930662
+    second: top_side_cesped_32
+  - first:
+      213: -8260989280820885001
+    second: top_side_cesped_33
+  - first:
+      213: 5923249227600251046
+    second: top_side_cesped_34
+  - first:
+      213: -5928304860966088978
+    second: top_side_cesped_35
+  - first:
+      213: 2707542267434512256
+    second: top_side_cesped_36
+  - first:
+      213: 2842563496649066974
+    second: top_side_cesped_37
+  - first:
+      213: 2600875554395952905
+    second: top_side_cesped_38
+  - first:
+      213: 8131805658806761461
+    second: top_side_cesped_39
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: top_side_cesped_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2000
+        height: 2000
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e471c4634d78fa0800000000000000
+      internalID: -5798432665546305980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 762396376d4c1314dbdda347bc091cf6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2000.0,"y":2000.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      top_side_cesped_0: -5798432665546305980
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

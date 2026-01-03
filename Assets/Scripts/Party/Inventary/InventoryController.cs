@@ -10,7 +10,7 @@ public class InventoryController : MonoBehaviour
     [Header("Inventary")]
     [SerializeField] private InventoryModel inventory = new InventoryModel();
 
-    // Evento simple para avisar de cambios
+    // Evento
     public event Action OnInventoryChanged;
 
     private void Awake()
@@ -19,10 +19,7 @@ public class InventoryController : MonoBehaviour
             Debug.LogWarning("InventoryController: No hay SwordDatabase asignada.");
     }
 
-    // -------------------------------------
-    //     MÉTODOS PÚBLICOS DEL INVENTARIO
-    // -------------------------------------
-
+    //     MÉTODOS 
     public void AddSword(EquipableSword sword)
     {
         if (sword == null)
@@ -80,12 +77,6 @@ public class InventoryController : MonoBehaviour
             return false;
         }
 
-        if (!inventory.ownedSwords.Contains(sword))
-        {
-            Debug.LogWarning($"EquipSwordToSlot: La espada '{sword.displayName}' no está en el inventario.");
-            return false;
-        }
-
         EquipableSword previousSword = null;
 
         if (slot == 1)
@@ -100,7 +91,7 @@ public class InventoryController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("EquipSwordToSlot: slot inválido (no es 1 o 2).");
+            Debug.LogWarning("EquipSwordToslot: slot inválido (no es 1 o 2).");
             return false;
         }
 

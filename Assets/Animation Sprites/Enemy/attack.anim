@@ -20,10 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
-    - time: 0
-      value: {fileID: -2300802771487063567, guid: 8424c6e569fb3534db7d41eb8e229cec, type: 3}
-    - time: 0.5
-      value: {fileID: -2300802771487063567, guid: 8424c6e569fb3534db7d41eb8e229cec, type: 3}
+    - time: 0.16
+      value: {fileID: 5782592519512310434, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - time: 0.24
+      value: {fileID: 3311498052495346178, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - time: 0.33
+      value: {fileID: 4001405271807961918, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - time: 0.41
+      value: {fileID: 1061096154103202024, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - time: 0.49
+      value: {fileID: 2444999564348534017, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +52,17 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -2300802771487063567, guid: 8424c6e569fb3534db7d41eb8e229cec, type: 3}
-    - {fileID: -2300802771487063567, guid: 8424c6e569fb3534db7d41eb8e229cec, type: 3}
+    - {fileID: 5782592519512310434, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - {fileID: 3311498052495346178, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - {fileID: 4001405271807961918, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - {fileID: 1061096154103202024, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
+    - {fileID: 2444999564348534017, guid: 89251ecb9a10c5440b28e8dfc1b48cb2, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.51
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,6 +82,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: AnimationEvent
+    data: Hit
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.49
     functionName: AnimationEvent
     data: AttackFinished

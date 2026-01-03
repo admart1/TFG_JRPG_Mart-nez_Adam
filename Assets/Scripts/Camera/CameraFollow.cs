@@ -5,26 +5,29 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public PlayerController playerController;
+
+    [Header("Offsets")]
     public float zOffset = -10f;
     public float yOffset = 0.7f;
+
+    [Header("Smoothing")]
     public float smoothTime = 0.2f;
+
+    [Header("Look-Ahead")]
     public float lookAheadDistance = 1f;
     public float lookAheadSmoothTime = 0.1f;
 
-    private Vector3 smoothVelocity = Vector3.zero;
-    private Vector3 lookAheadPos = Vector3.zero;
-    private Vector3 lookAheadVelocity = Vector3.zero;
+    [Header("Bounds")]
+    public BoxCollider2D cameraBounds;
 
-    private void Start()
+    private Camera cam;
+    private Vector3 smoothVelocity;
+    private Vector3 lookAheadPos;
+    private Vector3 lookAheadVelocity;
+
+    private void Awake()
     {
-        if (playerController != null)
-        {
-            Vector2 initialDir = playerController.MoveDirection;
-            if (initialDir.magnitude > 0.01f)
-            {
-                lookAheadPos = new Vector3(initialDir.x, initialDir.y, 0f).normalized * lookAheadDistance;
-            }
-        }
+        cam = GetComponent<Camera>();
     }
 
     private void LateUpdate()
@@ -33,13 +36,53 @@ public class CameraFollow : MonoBehaviour
 
         Vector2 moveDir = playerController.MoveDirection;
 
-        Vector3 basePosition = new Vector3(target.position.x, target.position.y + yOffset, zOffset);
+        Vector3 basePosition = new Vector3(
+            target.position.x,
+            target.position.y + yOffset,
+            zOffset
+        );
 
-        Vector3 targetLookAhead = new Vector3(moveDir.x, moveDir.y, 0f).normalized * lookAheadDistance;
-          lookAheadPos = Vector3.SmoothDamp(lookAheadPos, targetLookAhead, ref lookAheadVelocity, lookAheadSmoothTime);
+        Vector3 targetLookAhead = Vector3.zero;
+        if (moveDir.magnitude > 0.01f)
+        {
+            targetLookAhead =
+                new Vector3(moveDir.x, moveDir.y, 0f).normalized * lookAheadDistance;
+        }
 
+        lookAheadPos = Vector3.SmoothDamp(
+            lookAheadPos,
+            targetLookAhead,
+            ref lookAheadVelocity,
+            lookAheadSmoothTime
+        );
 
-        Vector3 finalTarget = basePosition + lookAheadPos;
-        transform.position = Vector3.SmoothDamp(transform.position, finalTarget, ref smoothVelocity, smoothTime);
+        Vector3 desiredPosition = basePosition + lookAheadPos;
+
+        if (cameraBounds != null)
+        {
+            Bounds bounds = cameraBounds.bounds;
+
+            float halfHeight = cam.orthographicSize;
+            float halfWidth = halfHeight * cam.aspect;
+
+            desiredPosition.x = Mathf.Clamp(
+                desiredPosition.x,
+                bounds.min.x + halfWidth,
+                bounds.max.x - halfWidth
+            );
+
+            desiredPosition.y = Mathf.Clamp(
+                desiredPosition.y,
+                bounds.min.y + halfHeight,
+                bounds.max.y - halfHeight
+            );
+        }
+
+        transform.position = Vector3.SmoothDamp(
+            transform.position,
+            desiredPosition,
+            ref smoothVelocity,
+            smoothTime
+        );
     }
 }

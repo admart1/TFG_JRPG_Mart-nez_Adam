@@ -9,15 +9,13 @@ public enum ActiveSword
 [System.Serializable]
 public class CharacterModel
 {
-    // ================================
     // DATOS ESTÁTICOS
     [Header("Personaje (character definition")]
     public CharacterDefinition definition;
 
-    // ================================
     // DATOS DINÁMICOS
     [Header("Estado actual")]
-    public int level = 1;                // Nivel actual
+    public int level = 1;              
     public int currentHP;
     public int currentMana;
 
@@ -26,13 +24,12 @@ public class CharacterModel
     public EquipableSword SwordSlot2;
     public ActiveSword activeSword = ActiveSword.Slot1;
 
-
     #region CONSTRUCTORES
     public void InitializeCharacter(CharacterDefinition def)
     {
         definition = def;
 
-        // estadp
+        // estado
         level = def.startingLevel;
         currentHP = def.startingHP;
         currentMana = def.startingMana;
@@ -56,17 +53,17 @@ public class CharacterModel
             return new FinalStats();
         }
 
-        // 1. stats base
+        // stats base
         FinalStats stats = definition.baseStats.ToStats();
 
-        // 2. progresión nivel
+        // progresión nivel
         if (definition.levelProgression != null)
         {
             StatsModifier levelModifier = definition.levelProgression.GetModifierForLevel(level);
             stats.ApplyModifier(levelModifier);
         }
 
-        // 3. Espada activa
+        // Espada activa
         EquipableSword active = GetActiveSword();
         if (active != null)
         {

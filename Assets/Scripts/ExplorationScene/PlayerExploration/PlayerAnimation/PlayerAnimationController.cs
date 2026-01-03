@@ -39,6 +39,8 @@ public class PlayerAnimationController : MonoBehaviour
         string sword1Clip = GenerateClipName(characterID, state, direction, "Sword", swordID);
         string sword2Clip = GenerateClipName(characterID, state, direction, "Sword", sword2ID);
 
+//        Debug.Log(sword1Clip);
+
         // se guarda el tiempo en el que estaba la animación si es movement
         float normalizedTime = 0f;
         if (state == "Movement")
@@ -116,10 +118,10 @@ public class PlayerAnimationController : MonoBehaviour
                 break;
 
             case PlayerFacing.FacingDirection.East:
-                bodyRenderer.sortingOrder = 3;
+                bodyRenderer.sortingOrder = 1;
                 armRenderer.sortingOrder = 4;
-                sword1Renderer.sortingOrder = 2;
-                sword2Renderer.sortingOrder = 1;
+                sword1Renderer.sortingOrder = 3;
+                sword2Renderer.sortingOrder = 2;
                 break;
 
             case PlayerFacing.FacingDirection.SouthEast:
@@ -144,10 +146,10 @@ public class PlayerAnimationController : MonoBehaviour
                 break;
 
             case PlayerFacing.FacingDirection.West:
-                bodyRenderer.sortingOrder = 4;
+                bodyRenderer.sortingOrder = 2;
                 armRenderer.sortingOrder = 1;
-                sword1Renderer.sortingOrder = 3;
-                sword2Renderer.sortingOrder = 2;
+                sword1Renderer.sortingOrder = 4;
+                sword2Renderer.sortingOrder = 3;
                 break;
 
             case PlayerFacing.FacingDirection.NorthWest:

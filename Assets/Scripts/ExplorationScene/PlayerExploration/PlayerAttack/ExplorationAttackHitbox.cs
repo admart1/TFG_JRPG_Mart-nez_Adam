@@ -7,18 +7,22 @@ public class ExplorationAttackHitbox : MonoBehaviour
     private BoxCollider2D hitbox;
     private PlayerFacing playerFacing;
 
-    [Header("Offset general")] //0offset concreto de x0.005 e y0.698
-    public Vector2 baseCenterOffset = new Vector2(0.005f, 0.698f);
+    [System.Serializable]
+    public struct DirectionalHitbox
+    {
+        public Vector2 offset;
+        public Vector2 size;
+    }
 
-    [Header("Offsets por dirección")]
-    public Vector2 North = new Vector2(0f, 0.45f);
-    public Vector2 South = new Vector2(0f, -0.45f);
-    public Vector2 East = new Vector2(0.45f, 0f);
-    public Vector2 West = new Vector2(-0.45f, 0f);
-    public Vector2 NorthEast = new Vector2(0.225f, 0.225f);
-    public Vector2 SouthEast = new Vector2(0.225f, -0.225f);
-    public Vector2 SouthWest = new Vector2(-0.225f, -0.225f);
-    public Vector2 NorthWest = new Vector2(-0.225f, 0.225f);
+    [Header("Hitbox por dirección")]
+    public DirectionalHitbox North;
+    public DirectionalHitbox South;
+    public DirectionalHitbox East;
+    public DirectionalHitbox West;
+    public DirectionalHitbox NorthEast;
+    public DirectionalHitbox NorthWest;
+    public DirectionalHitbox SouthEast;
+    public DirectionalHitbox SouthWest;
 
     [Header("Layers golpeables")]
     public LayerMask hitMask;
@@ -32,68 +36,73 @@ public class ExplorationAttackHitbox : MonoBehaviour
     public void Activate() => EnableHitbox();
     public void Deactivate() => DisableHitbox();
 
+    Vector2 lastOffset;
+
+
     private void Awake()
     {
         hitbox = GetComponent<BoxCollider2D>();
-
         hitbox.enabled = false;
 
         playerFacing = GetComponentInParent<PlayerFacing>();
     }
 
+    private void Update()
+    {
+        lastOffset = hitbox.offset;
+    }
+
     public void EnableHitbox()
     {
-        UpdateHitboxPosition();
+        ApplyHitboxData();
 
         hitTargets.Clear();
         active = true;
         hitbox.enabled = true;
-        Debug.Log("Hitbox activada en posición: " + transform.localPosition);
     }
 
     public void DisableHitbox()
     {
         active = false;
         hitbox.enabled = false;
-        Debug.Log("Hitbox desactivada");
     }
 
-    private void UpdateHitboxPosition()
+    private void ApplyHitboxData()
     {
         if (playerFacing == null) return;
 
-        Vector2 finalOffset = baseCenterOffset + GetDirectionalOffset();
-        transform.localPosition = new Vector3(finalOffset.x, finalOffset.y, transform.localPosition.z);
+        DirectionalHitbox data = GetDirectionalHitbox();
+
+        hitbox.offset = data.offset;
+        hitbox.size = data.size;
     }
 
-    private Vector2 GetDirectionalOffset()
+    private DirectionalHitbox GetDirectionalHitbox()
     {
         switch (playerFacing.facingDirection)
         {
             case PlayerFacing.FacingDirection.North: return North;
-            case PlayerFacing.FacingDirection.NorthEast: return NorthEast;
-            case PlayerFacing.FacingDirection.East: return East;
-            case PlayerFacing.FacingDirection.SouthEast: return SouthEast;
             case PlayerFacing.FacingDirection.South: return South;
-            case PlayerFacing.FacingDirection.SouthWest: return SouthWest;
+            case PlayerFacing.FacingDirection.East: return East;
             case PlayerFacing.FacingDirection.West: return West;
+            case PlayerFacing.FacingDirection.NorthEast: return NorthEast;
             case PlayerFacing.FacingDirection.NorthWest: return NorthWest;
-
-            default: return Vector2.zero;
+            case PlayerFacing.FacingDirection.SouthEast: return SouthEast;
+            case PlayerFacing.FacingDirection.SouthWest: return SouthWest;
+            default: return North;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!active) return;
-
         if ((hitMask.value & (1 << other.gameObject.layer)) == 0) return;
 
         var damageable = other.GetComponent<IDamageable>();
         if (damageable != null && !hitTargets.Contains(damageable))
         {
             hitTargets.Add(damageable);
-            Vector2 hitPos = other.ClosestPoint(transform.position);
+            Vector2 hitPos = other.ClosestPoint(hitbox.bounds.center);
             damageable.TakeDamage(damage, hitPos, gameObject);
         }
     }
@@ -102,10 +111,8 @@ public class ExplorationAttackHitbox : MonoBehaviour
     {
         if (hitbox == null) return;
 
-        Gizmos.color = hitbox.enabled ? Color.green : Color.red;
-
-        Gizmos.DrawWireCube(
-            transform.position + (Vector3)hitbox.offset,
-            hitbox.size) ;
+        Gizmos.color = Color.yellow;
+        Vector3 center = transform.TransformPoint(lastOffset);
+        Gizmos.DrawWireCube(center, hitbox.size);
     }
 }

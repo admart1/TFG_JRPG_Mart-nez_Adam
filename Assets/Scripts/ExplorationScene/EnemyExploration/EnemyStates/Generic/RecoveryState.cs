@@ -59,4 +59,4 @@ public class RecoveryState : EnemyState
     }
 }
 
-// arreglar los numeros magicos
+// arreglar num magicos

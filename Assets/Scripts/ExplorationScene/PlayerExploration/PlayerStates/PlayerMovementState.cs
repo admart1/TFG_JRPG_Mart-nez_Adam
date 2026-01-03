@@ -17,11 +17,10 @@ public class PlayerMovementState : PlayerState
 
         if (player.input.ToBattlePressed && player.combatDetector.SelectedEnemy != null)
         {
-            CombatTransitionManager.Instance.StartCombat(
-              player.gameObject,
-              player.combatDetector.SelectedEnemy,
-              CombatAdvantage.Neutral
-            );
+            var enemy = player.combatDetector.SelectedEnemy;
+            var advantage = enemy.GetCombatAdvantageAgainstPlayer();
+
+            CombatTransitionManager.Instance.StartCombat(enemy, advantage);
         }
 
         if (player.input.AttackPressed)
@@ -71,10 +70,8 @@ public class PlayerMovementState : PlayerState
 
     public override void LogicUpdate()
     {
-        //actualizar direcci�n
         player.playerFacing.UpdateFacingDirection(rawInput);
 
-        //reproducir animacion
         player.animationController.PlayAnimation(
             "Movement",
             player.playerFacing.facingDirection
@@ -106,26 +103,22 @@ public class PlayerMovementState : PlayerState
 
         Vector2 input = player.MoveDirection;
 
-        // Si no hay movimiento horizontal, no hay efecto de rampa
         if (Mathf.Abs(input.x) <= 0.01f)
         {
             player.SetVelocity(input * (player.MovementSpeed * trigger.rampSpeedModifier));
             return;
         }
 
-        // Rampas hacia la derecha
         if (trigger.rampToRight)
         {
             input.y += input.x * trigger.rampInclination;
         }
 
-        // Rampas hacia la izquierda
         if (trigger.rampToLeft)
         {
             input.y -= input.x * trigger.rampInclination;
         }
 
-        // Normalización para mantener velocidad constante
         input = input.normalized;
 
         player.SetVelocity(input * (player.MovementSpeed * trigger.rampSpeedModifier));

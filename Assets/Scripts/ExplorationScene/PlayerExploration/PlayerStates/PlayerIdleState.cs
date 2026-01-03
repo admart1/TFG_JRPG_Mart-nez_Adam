@@ -12,11 +12,10 @@ public class PlayerIdleState : PlayerState
     {
         if (player.input.ToBattlePressed && player.combatDetector.SelectedEnemy != null)
         {
-            CombatTransitionManager.Instance.StartCombat(
-              player.gameObject,
-              player.combatDetector.SelectedEnemy,
-              CombatAdvantage.Neutral
-            );
+            var enemy = player.combatDetector.SelectedEnemy;
+            var advantage = enemy.GetCombatAdvantageAgainstPlayer();
+
+            CombatTransitionManager.Instance.StartCombat(enemy, advantage);
         }
 
         if (player.input.Move != Vector2.zero)              // ir a movimiento
@@ -24,16 +23,17 @@ public class PlayerIdleState : PlayerState
             stateMachine.ChangeState(player.MovementState);
         }
 
+
         if (player.input.AttackPressed)                     // ir a ataque
         {
             stateMachine.ChangeState(player.AttackState);
         }
-
+        /*
         if (player.input.ChangeCharacterPressed)            // cambiar personaje
         {
             player.partyManager.NextCharacter();
             player.character = player.partyManager.activeCharacter;
-        }
+        }*/
 
         if (player.input.SwordMenuPressed)
         {

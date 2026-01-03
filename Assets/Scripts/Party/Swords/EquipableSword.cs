@@ -12,4 +12,7 @@ public class EquipableSword : ScriptableObject
 
     [Header("Stats")]
     public StatsModifier statsModifier;
+
+    [Header("Tipo")]
+    public SwordType swordType = SwordType.Standard;
 }

@@ -54,10 +54,10 @@ public class PlayerDashState : PlayerState
                 postDashBoost = 0f;
                 break;
             case DashLevel.Level3:
-                hasEndLag = false;
+                hasEndLag = true;
                 hasCooldown = true;
-                cooldownDuration = 0.5f;
-                postDashBoost = 2f; 
+                cooldownDuration = 0.3f;
+                postDashBoost = 0f; 
                 break;
             case DashLevel.Level4:
                 hasEndLag = false;

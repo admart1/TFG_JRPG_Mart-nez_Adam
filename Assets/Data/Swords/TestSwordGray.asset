@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: TestSwordGray
   m_EditorClassIdentifier: Assembly-CSharp::EquipableSword
   swordId: sw_gray
-  displayName: Espada gris
-  icon: {fileID: 0}
+  displayName: Espada Gris
+  icon: {fileID: 2800000, guid: e5762a38569bd3346973790062303ed8, type: 3}
   statsModifier:
     hpFlat: 0
+    manaFlat: 0
     offenseFlat: 0
     defenseFlat: 0
     speedFlat: 0
     hpPercent: 0
+    manaPercent: 0
     offensePercent: 0
     defensePercent: 0
     speedPercent: 0
+  swordType: 2

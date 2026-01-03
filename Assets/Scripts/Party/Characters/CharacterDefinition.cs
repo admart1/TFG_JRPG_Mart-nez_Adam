@@ -3,30 +3,29 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "RPG/Character Definition", fileName = "NewCharacterDefinition")]
 public class CharacterDefinition : ScriptableObject
 {
-    // ================================
+
     // DATOS ESTÁTICOS
-    // ================================
     [Header("Identidad")]
     public string characterId;          
     public string displayName;       
 
-    [Header("Stats Base")]                  // ambos son SO
+    [Header("Stats Base")]                
     public BaseStats baseStats;         
     public LevelProgression levelProgression; 
 
     [Header("Visual")]                      // placeholder
-    public Sprite portrait;                 
+    public Sprite combatSprite;                 
     public RuntimeAnimatorController overworldAnimator;
+    public Texture2D playerIcon;
 
     [Header("Empty sword TEMPORAL")]
     public EquipableSword emptySword;
 
-    // ================================
+
     // DATOS DINÁMICOS (a falta de un sistema de guardado)
-    // ================================
     [Header("Nivel y estado inicial")]
     public int startingLevel = 1;            
-    public int startingHP = 10;
+    public int startingHP = 40;
     public int startingMana = 10;
 
 

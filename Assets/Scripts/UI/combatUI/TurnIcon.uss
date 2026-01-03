@@ -1,0 +1,8 @@
+.turn-current {
+    background-color: rgb(214, 194, 64);
+}
+
+.turn-default {
+    background-color: rgb(110, 110, 110);
+    margin-bottom: 50px;
+}

@@ -4,6 +4,7 @@ public class PlayerHeightSystem : MonoBehaviour
 {
     [Header("Current Height")]
     public int currentHeight = 0;
+    public bool isFalling = false;
 
     [Header("Height Layers")]
     public string[] heightLayerNames;

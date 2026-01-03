@@ -8,13 +8,17 @@ public class SlimeEnemy : ExplorationEnemyBase
         IdleState = new EnemyIdleState();
         ChaseState = new EnemyChaseState();
         AttackState = new SlimeAttackState();
-        RecoveryState = new RecoveryState(0.5f);
+        RecoveryState = new RecoveryState(2f);
+        KnockbackState = new EnemyKnockbackState();
+        StunState = new EnemyStunState();
 
         // inicializar estados
         IdleState.Initialize(this, stateMachine);
         ChaseState.Initialize(this, stateMachine);
         AttackState.Initialize(this, stateMachine);
         RecoveryState.Initialize(this, stateMachine);
+        KnockbackState.Initialize(this, stateMachine);
+        StunState.Initialize(this, stateMachine);
     }
 
     protected override void Start()
@@ -24,5 +28,3 @@ public class SlimeEnemy : ExplorationEnemyBase
         stateMachine.Initialize(IdleState);
     }
 }
-
-// magic numbers..

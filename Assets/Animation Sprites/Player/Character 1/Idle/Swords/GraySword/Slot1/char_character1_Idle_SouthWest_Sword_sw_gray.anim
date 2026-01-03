@@ -21,25 +21,25 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1097356313254013076, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -1097356313254013076, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.1
-      value: {fileID: -4748063887742874686, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -4748063887742874686, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.2
-      value: {fileID: -3638738415329402512, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -3638738415329402512, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.3
-      value: {fileID: -794742000418418262, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -794742000418418262, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.4
-      value: {fileID: 2606548324746872036, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: 2606548324746872036, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.5
-      value: {fileID: 3517685570469350294, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: 3517685570469350294, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.6
-      value: {fileID: 5541202144198276737, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: 5541202144198276737, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.7
-      value: {fileID: -6533187601610316491, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -6533187601610316491, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.8
-      value: {fileID: -7442721287197385851, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -7442721287197385851, guid: 42e1646259628a040acdb64ade416002, type: 3}
     - time: 0.89000005
-      value: {fileID: -7442721287197385851, guid: b15b677350f503346ba35e678e2efab5, type: 3}
+      value: {fileID: -7442721287197385851, guid: 42e1646259628a040acdb64ade416002, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212

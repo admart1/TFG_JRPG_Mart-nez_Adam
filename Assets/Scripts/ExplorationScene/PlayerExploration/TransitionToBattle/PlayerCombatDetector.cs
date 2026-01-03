@@ -89,10 +89,10 @@ public class PlayerCombatDetector : MonoBehaviour
     private void ShowEnemyHealthBars()
     {
         // mostar
-        foreach (var enemy in detectedEnemies)
+       /* foreach (var enemy in detectedEnemies)
         {
             enemy.ShowHealthBar(true);
-        }
+        }*/
 
         // ocultar
         var allEnemies = FindObjectsByType<ExplorationEnemyBase>(

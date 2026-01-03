@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: 89251ecb9a10c5440b28e8dfc1b48cb2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3213079785493367381
+    second: BlueSlime_0
+  - first:
+      213: -8403912912354435786
+    second: BlueSlime_1
+  - first:
+      213: 3753978272353456313
+    second: BlueSlime_2
+  - first:
+      213: -5305816896474824778
+    second: BlueSlime_3
+  - first:
+      213: -2163016933820620931
+    second: BlueSlime_4
+  - first:
+      213: 3418527084011251722
+    second: BlueSlime_5
+  - first:
+      213: 8676674996904116913
+    second: BlueSlime_6
+  - first:
+      213: -8604462106543629261
+    second: BlueSlime_7
+  - first:
+      213: -6241414368261684679
+    second: BlueSlime_8
+  - first:
+      213: 4525596157005178750
+    second: BlueSlime_9
+  - first:
+      213: -3354963586057026713
+    second: BlueSlime_10
+  - first:
+      213: 8481422679331399147
+    second: BlueSlime_11
+  - first:
+      213: 1135845510161434390
+    second: BlueSlime_12
+  - first:
+      213: 4613750912141674530
+    second: BlueSlime_13
+  - first:
+      213: 5782592519512310434
+    second: BlueSlime_14
+  - first:
+      213: 3311498052495346178
+    second: BlueSlime_15
+  - first:
+      213: 4001405271807961918
+    second: BlueSlime_16
+  - first:
+      213: 1061096154103202024
+    second: BlueSlime_17
+  - first:
+      213: 2444999564348534017
+    second: BlueSlime_18
+  - first:
+      213: 4680298004457924198
+    second: BlueSlime_19
+  - first:
+      213: 4232038082275440837
+    second: BlueSlime_20
+  - first:
+      213: -2634742750588306862
+    second: BlueSlime_21
+  - first:
+      213: 980016562649252578
+    second: BlueSlime_22
+  - first:
+      213: -3361557511187276528
+    second: BlueSlime_23
+  - first:
+      213: 6882239649144370225
+    second: BlueSlime_24
+  - first:
+      213: 5534806241401749867
+    second: BlueSlime_25
+  - first:
+      213: 7633752094897000480
+    second: BlueSlime_26
+  - first:
+      213: 8180743741459970061
+    second: BlueSlime_27
+  - first:
+      213: 2889136980958347748
+    second: BlueSlime_28
+  - first:
+      213: 8329866631184964778
+    second: BlueSlime_29
+  - first:
+      213: 5184734924812278484
+    second: BlueSlime_30
+  - first:
+      213: 3411898595558012634
+    second: BlueSlime_31
+  - first:
+      213: -5357188541736832863
+    second: BlueSlime_32
+  - first:
+      213: 4079519789788512477
+    second: BlueSlime_33
+  - first:
+      213: 7421074424169860559
+    second: BlueSlime_34
+  - first:
+      213: 819989781344875417
+    second: BlueSlime_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BlueSlime_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 11
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a02519a07279c20800000000000000
+      internalID: 3213079785493367381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 11
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d9bc76bbd4f5b80800000000000000
+      internalID: -8403912912354435786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_2
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 11
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b0992a695fc81430800000000000000
+      internalID: 3753978272353456313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_3
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 11
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf3a52e4a3fd56b0800000000000000
+      internalID: -5305816896474824778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_4
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 11
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f97701f8b6bf1e0800000000000000
+      internalID: -2163016933820620931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_5
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 11
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08ea81554c017f20800000000000000
+      internalID: 3418527084011251722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_6
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 11
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b2cbfd40fdb96870800000000000000
+      internalID: 8676674996904116913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_7
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 11
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c58207d4fc69880800000000000000
+      internalID: -8604462106543629261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_8
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 11
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9324eb353ba0269a0800000000000000
+      internalID: -6241414368261684679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_9
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 11
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77aa272ab52ece30800000000000000
+      internalID: 4525596157005178750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_10
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 11
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76343b2d466c071d0800000000000000
+      internalID: -3354963586057026713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_11
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 11
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be56d778df014b570800000000000000
+      internalID: 8481422679331399147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_12
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 11
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61705e8397553cf00800000000000000
+      internalID: 1135845510161434390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_13
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 11
+        width: 29
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 228c6588206570040800000000000000
+      internalID: 4613750912141674530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_14
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 10
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2cc5e4245ef3050800000000000000
+      internalID: 5782592519512310434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_15
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 10
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a02650fedc4fd20800000000000000
+      internalID: 3311498052495346178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_16
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 10
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b2d74f4e8d78730800000000000000
+      internalID: 4001405271807961918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_17
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 10
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0cad98455c9be00800000000000000
+      internalID: 1061096154103202024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_18
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 10
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10daafc46226ee120800000000000000
+      internalID: 2444999564348534017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_19
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 11
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6662faedc32c3f040800000000000000
+      internalID: 4680298004457924198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_20
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 4
+        width: 50
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8f3f9a6383bba30800000000000000
+      internalID: 4232038082275440837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_21
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 20
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25af5a48d638f6bd0800000000000000
+      internalID: -2634742750588306862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_22
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 21
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e245b21fd7b99d00800000000000000
+      internalID: 980016562649252578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_23
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 16
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01dd2adf0495951d0800000000000000
+      internalID: -3361557511187276528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_24
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 4
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 134fb5a4f70a28f50800000000000000
+      internalID: 6882239649144370225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_25
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 21
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b61cd5fa3f49fcc40800000000000000
+      internalID: 5534806241401749867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_26
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 16
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 020dabfb51980f960800000000000000
+      internalID: 7633752094897000480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_27
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 4
+        width: 47
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d08b834e617d78170800000000000000
+      internalID: 8180743741459970061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_28
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 21
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e18771e6c6481820800000000000000
+      internalID: 2889136980958347748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_29
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 16
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aacd82a4191a99370800000000000000
+      internalID: 8329866631184964778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_30
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 4
+        width: 50
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da5ff7b1f0e3f740800000000000000
+      internalID: 5184734924812278484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_31
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 4
+        width: 50
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad6b3e512bf795f20800000000000000
+      internalID: 3411898595558012634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_32
+      rect:
+        serializedVersion: 2
+        x: 1277
+        y: 4
+        width: 50
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0bbf6a76177a5b0800000000000000
+      internalID: -5357188541736832863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_33
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 9
+        width: 43
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0458472ad5d9830800000000000000
+      internalID: 4079519789788512477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_34
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 10
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd8168ced3fcf660800000000000000
+      internalID: 7421074424169860559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlueSlime_35
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 15
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993f2849c50316b00800000000000000
+      internalID: 819989781344875417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BlueSlime_0: 3213079785493367381
+      BlueSlime_1: -8403912912354435786
+      BlueSlime_10: -3354963586057026713
+      BlueSlime_11: 8481422679331399147
+      BlueSlime_12: 1135845510161434390
+      BlueSlime_13: 4613750912141674530
+      BlueSlime_14: 5782592519512310434
+      BlueSlime_15: 3311498052495346178
+      BlueSlime_16: 4001405271807961918
+      BlueSlime_17: 1061096154103202024
+      BlueSlime_18: 2444999564348534017
+      BlueSlime_19: 4680298004457924198
+      BlueSlime_2: 3753978272353456313
+      BlueSlime_20: 4232038082275440837
+      BlueSlime_21: -2634742750588306862
+      BlueSlime_22: 980016562649252578
+      BlueSlime_23: -3361557511187276528
+      BlueSlime_24: 6882239649144370225
+      BlueSlime_25: 5534806241401749867
+      BlueSlime_26: 7633752094897000480
+      BlueSlime_27: 8180743741459970061
+      BlueSlime_28: 2889136980958347748
+      BlueSlime_29: 8329866631184964778
+      BlueSlime_3: -5305816896474824778
+      BlueSlime_30: 5184734924812278484
+      BlueSlime_31: 3411898595558012634
+      BlueSlime_32: -5357188541736832863
+      BlueSlime_33: 4079519789788512477
+      BlueSlime_34: 7421074424169860559
+      BlueSlime_35: 819989781344875417
+      BlueSlime_4: -2163016933820620931
+      BlueSlime_5: 3418527084011251722
+      BlueSlime_6: 8676674996904116913
+      BlueSlime_7: -8604462106543629261
+      BlueSlime_8: -6241414368261684679
+      BlueSlime_9: 4525596157005178750
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

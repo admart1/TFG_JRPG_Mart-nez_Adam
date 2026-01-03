@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4091a61384e7224db0d0aa2db620e7f, type: 3}
+  m_Name: Slime_brown
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyGroupData
+  enemies:
+  - enemyName: "Slime Marr\xF3n"
+    enemyID: brown_slime
+    maxHP: 150
+    offense: 6
+    defense: 16
+    speed: 1
+    level: 1
+    weakness: 2
+    resistance: 1
+    combatSprite: {fileID: 2679232633631472805, guid: 707d05aab9562544788392ee9693d662, type: 3}
+    enemyIcon: {fileID: 2800000, guid: 84b7b8f30231a2940a4b590dba85782d, type: 3}

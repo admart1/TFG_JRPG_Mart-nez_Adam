@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerFallState : PlayerState
@@ -17,7 +16,7 @@ public class PlayerFallState : PlayerState
     private Vector2 fallDirection;
     public int targetHeight;
 
-    private float fallSpeed = 3f;
+    private float fallSpeed = 4f;
 
     private bool inUpPhase;
     private float upPhaseTimer;
@@ -62,8 +61,6 @@ public class PlayerFallState : PlayerState
             "Dash",
             player.playerFacing.facingDirection
         );
-
-        Debug.Log(distanceToFall);
     }
 
 
@@ -76,14 +73,26 @@ public class PlayerFallState : PlayerState
         {
             upPhaseTimer -= Time.fixedDeltaTime;
 
-            player.Rigidbody.linearVelocity = fallDirection * (fallSpeed * 0.7f);
+            player.Rigidbody.linearVelocity = fallDirection * (fallSpeed * 0.4f);
 
             if (upPhaseTimer <= 0)
             {
                 // transición a caída normal
                 inUpPhase = false;
 
-                float horizontalFactor = 0.3f;
+                float horizontalFactor;
+
+                Debug.Log("fall origin" + fallOrigin);
+
+                if (targetHeight == 0 && player.heightSystem.currentHeight == 2)
+                {
+                    horizontalFactor = 0.2f;
+                }
+                else
+                {
+                    horizontalFactor = 0.4f;
+                }
+
                 fallDirection = (Vector2.down + initialHorizontalDir * horizontalFactor).normalized;
             }
 
@@ -91,17 +100,23 @@ public class PlayerFallState : PlayerState
         }
 
         // fase 2 de la caída
+        
+        if (fallCardinal == FallCardinalDir.North || fallCardinal == FallCardinalDir.West)
+            player.heightSystem.isFalling = true;
+
         player.Rigidbody.linearVelocity = fallDirection * fallSpeed;
 
-        distanceCovered += fallSpeed * Time.fixedDeltaTime;
+        distanceCovered += fallSpeed * Time.fixedDeltaTime;    
 
         if (distanceCovered >= distanceToFall)
         {
             player.heightSystem.SetHeight(targetHeight);
+         
             player.heightSystem.EnableCollisions();
             player.Rigidbody.linearVelocity = Vector2.zero;
 
             stateMachine.ChangeState(player.IdleState);
+            player.heightSystem.isFalling = false;
         }
     }
 
@@ -142,24 +157,24 @@ public class PlayerFallState : PlayerState
     Dictionary<(int, int, FallCardinalDir), float> fallDistances = new Dictionary<(int, int, FallCardinalDir), float>()
     {
     // 1 → 0
-    { (1, 0, FallCardinalDir.East), 0.70f },
-    { (1, 0, FallCardinalDir.West), 0.70f },
-    { (1, 0, FallCardinalDir.North), 0.7f },
-    { (1, 0, FallCardinalDir.South), 0.7f },
+    { (1, 0, FallCardinalDir.East), 1.2f },
+    { (1, 0, FallCardinalDir.West), 1.2f },
+    { (1, 0, FallCardinalDir.North), 1f },
+    { (1, 0, FallCardinalDir.South), 1.7f },
 
     // 2 → 0
-    { (2, 0, FallCardinalDir.East), 1.02f },
-    { (2, 0, FallCardinalDir.West), 1.02f },
-    { (2, 0, FallCardinalDir.North), 0.70f },
-    { (2, 0, FallCardinalDir.South), 0.70f },
+    { (2, 0, FallCardinalDir.East), 2.4f },
+    { (2, 0, FallCardinalDir.West), 2.4f },
+    { (2, 0, FallCardinalDir.North), 2f },
+    { (2, 0, FallCardinalDir.South), 3.2f },
 
     // 2 → 1
-    { (2, 1, FallCardinalDir.East), 0.70f },
-    { (2, 1, FallCardinalDir.West), 0.70f },
-    { (2, 1, FallCardinalDir.North), 0.48f },
-    { (2, 1, FallCardinalDir.South), 0.48f },
+    { (2, 1, FallCardinalDir.East), 1.2f },
+    { (2, 1, FallCardinalDir.West), 1.2f },
+    { (2, 1, FallCardinalDir.North), 1f },
+    { (2, 1, FallCardinalDir.South), 1.7f },
 
-    // 5 → 0 (ejemplo)
+    // 5 → 0
     { (5, 0, FallCardinalDir.East), 1.98f },
     { (5, 0, FallCardinalDir.West), 1.98f },
     { (5, 0, FallCardinalDir.North), 1.40f },

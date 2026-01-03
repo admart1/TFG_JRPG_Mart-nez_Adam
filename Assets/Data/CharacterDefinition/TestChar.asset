@@ -16,12 +16,13 @@ MonoBehaviour:
   displayName: Personaje 1
   baseStats: {fileID: 11400000, guid: a5abc66c7a7a55246b1d63d14a97f5f0, type: 2}
   levelProgression: {fileID: 11400000, guid: 1ba79a1daeaecd94c93442f07c4825d1, type: 2}
-  portrait: {fileID: 0}
+  combatSprite: {fileID: -4571828015118065507, guid: b231f495e1cc44d4a8a5bc5795c1537d, type: 3}
   overworldAnimator: {fileID: 0}
+  playerIcon: {fileID: 2800000, guid: 6c011739edc5a764fb86d0ea6cece3f7, type: 3}
   emptySword: {fileID: 11400000, guid: 1905ba36689916048b3ac68d55c5580e, type: 2}
   startingLevel: 1
-  startingHP: 10
+  startingHP: 35
   startingMana: 10
-  startingSword1: {fileID: 11400000, guid: 9ebb89afce4273e4b95987aa670b3438, type: 2}
+  startingSword1: {fileID: 11400000, guid: bbc19f840f9fc0241af1ed17acbcf60a, type: 2}
   startingSword2: {fileID: 11400000, guid: bbc19f840f9fc0241af1ed17acbcf60a, type: 2}
   activeSword: 0

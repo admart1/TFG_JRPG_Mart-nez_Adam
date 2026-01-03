@@ -6,6 +6,8 @@ TagManager:
   tags:
   - MovementTrigger
   - PlayerEnemiesTarget
+  - PlayerHurt
+  - PlayerTriggerMovement
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Enemies
-  - 
+  - EnemyGround
   - 
   - 
   - Player_Ramp
@@ -43,8 +45,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BelowPlayer
+    uniqueID: 2958949341
+    locked: 0
   - name: PlayerCharacter
     uniqueID: 2366190409
+    locked: 0
+  - name: AbovePlayer
+    uniqueID: 67545873
+    locked: 0
+  - name: Floor1
+    uniqueID: 3763150721
     locked: 0
   m_RenderingLayers:
   - Default
